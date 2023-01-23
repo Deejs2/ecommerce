@@ -1,4 +1,5 @@
 <main>
+  <h2>Home Page</h2>
 
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
