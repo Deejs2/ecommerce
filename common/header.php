@@ -74,6 +74,7 @@
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
     <link href="css/header.css" rel="stylesheet">
+<link href="css/login.css" rel="stylesheet">
   </head>
   <body>
     
@@ -91,7 +92,7 @@
       </ul>
 
       <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2">Login</button>
+        <button type="button" class="btn btn-outline-primary me-2"><a href="?page=login" class="nav-link px-2 link-dark">Login</a></button>
         <button type="button" class="btn btn-primary">Sign-up</button>
       </div>
     </header>
