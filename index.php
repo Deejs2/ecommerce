@@ -1,5 +1,5 @@
 <?php
-include('db.php');
+include('db/db.php');
 include('common/header.php');
 
 $page = $_GET['page'];
@@ -7,6 +7,9 @@ $page = $_GET['page'];
 switch ($page){
     case 'home':
         include("home.php");
+        break;
+    case 'product':
+        include("product.php");
         break;
     case 'about':
         include("about.php");

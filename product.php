@@ -1,4 +1,3 @@
-<?php include('common/header.php'); ?>
 
     <!-- Custom styles for this template -->
     <link href="css/product.css" rel="stylesheet">
@@ -96,8 +95,6 @@
         <div class="bg-white box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
       </div>
     </div>
-
-    <?php include('common/footer.php'); ?>
 
 
     <!-- Bootstrap core JavaScript

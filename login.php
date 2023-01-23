@@ -1,4 +1,4 @@
-<?php include('common/header.php'); ?>
+
 <link href="css/login.css" rel="stylesheet">
     
 <main class="form-signin w-100 m-auto">
@@ -25,10 +25,4 @@
   </form>
 </main>
 
-<?php include('common/footer.php'); ?>
-
-
-    
-  </body>
-</html>
 
