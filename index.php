@@ -1,6 +1,25 @@
-<?php include('common/header.php'); ?>
+<?php
+include('db.php');
+include('common/header.php');
 
-<?php include('home.php'); ?>
+$page = $_GET['page'];
 
+switch ($page){
+    case 'home':
+        include("home.php");
+        break;
+    case 'about':
+        include("about.php");
+        break;
+    case 'contact':
+        include("contact.php");
+        break;
+    case 'login':
+        include("login.php");
+        break;
+    default:
+        include("home.php");
+}
 
-  <?php include('common/footer.php'); ?>
+include('common/footer.php');
+?>
