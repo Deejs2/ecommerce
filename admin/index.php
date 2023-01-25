@@ -1,8 +1,13 @@
 <?php
-include('../db/db.php');
-include('common/header.php');
+session_start();
 
+if(!isset($_SESSION['email'])){
+    header('Location:../?page=login');
+}
+
+include('../db/db.php');
 ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -80,26 +85,29 @@ include('common/header.php');
   </head>
   <body>
 
+  <?php include('common/header.php'); ?>
+
   <div class="container-fluid">
     <div class="row">
         <?php include("common/sidebar.php"); ?>
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <?php
+        <?php
             // Dynamic page load
             $page = $_GET['page'];
+            $action = $_GET['action'];
 
             switch ($page){
-                case 'customer':
-                    include("customers.php");
-                    break;
-                case 'order':
-                    include("orders.php");
-                    break;
-                 case 'product':
-                    include("products.php");
-                    break;
-                case 'logout':
+              case 'customer':
+                include("customers.php");
+                break;
+              case 'product':
+                include("products.php");
+                break;
+              case 'order':
+                include("orders.php");
+                break;
+              case 'logout':
                     include("logout.php");
                     break;
                 default:
@@ -109,8 +117,6 @@ include('common/header.php');
         </main>
     </div>
 </div>
-
-<?php include('common/footer.php'); ?>
 
 
 

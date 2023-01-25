@@ -1,6 +1,8 @@
+
 <?php
+include('db/db.php');
 session_start();
-include("db/db.php");
+
 
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
@@ -21,18 +23,18 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-    
+
 <main class="form-signin w-100 m-auto">
   <form method="post" action="">
-    <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+    <h3 style="font-weight: 600; font-style:italic;">eNepal</h3>
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     <div class="form-floating">
-      <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
-      <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" required>
       <label for="floatingPassword">Password</label>
     </div>
 
@@ -41,8 +43,9 @@ if (isset($_POST['submit'])) {
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit" value="Login">Sign in</button>
+    <input class="w-100 btn btn-lg btn-primary" type="submit" name="submit" value="Login"/>
     
   </form>
-</main>
+</main>-->
+
 
