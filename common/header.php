@@ -106,6 +106,11 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.badge {
+  height: 50px; width: 100px;
+  font-size: 30px;
+}
     </style>
 
     
