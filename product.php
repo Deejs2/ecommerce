@@ -14,6 +14,110 @@
         <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
       </div>
     </nav>
+<!---------third child------>
+<div class="bg-light">
+  <h3 class="text-center">eNEPAL Store</h3>
+  <p class="text-center">eNEPAL provide quality goods as well as on-time delivery of the product.</p>
+</div>
+
+<!-----fourth child----->
+<div class="row">
+  <div class="col-md-12">
+    <!-----product----->
+    <div class="row">
+      <div class="col-md-3 mb-2">
+        <div class="card">
+        <img src="./img/dairymilk-silk.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-info">Add to cart</a>
+          <a href="#" class="btn btn-secondary">View more</a>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-3 mb-2">
+      <div class="card">
+        <img src="./img/apple.jfif" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-info">Add to cart</a>
+          <a href="#" class="btn btn-secondary">View more</a>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-3 mb-2">
+      <div class="card">
+        <img src="./img/mango.jfif" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-info">Add to cart</a>
+          <a href="#" class="btn btn-secondary">View more</a>
+        </div>
+      </div>
+</div>
+      <div class="col-md-3 mb-2">
+        <div class="card">
+        <img src="./img/dairymilk-silk.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-info">Add to cart</a>
+          <a href="#" class="btn btn-secondary">View more</a>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-3 mb-2">
+        <div class="card">
+        <img src="./img/dairymilk-silk.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-info">Add to cart</a>
+          <a href="#" class="btn btn-secondary">View more</a>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-3 mb-2">
+        <div class="card">
+        <img src="./img/dairymilk-silk.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-info">Add to cart</a>
+          <a href="#" class="btn btn-secondary">View more</a>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-3 mb-2">
+        <div class="card">
+        <img src="./img/dairymilk-silk.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-info">Add to cart</a>
+          <a href="#" class="btn btn-secondary">View more</a>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-3 mb-2">
+        <div class="card">
+        <img src="./img/dairymilk-silk.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-info">Add to cart</a>
+          <a href="#" class="btn btn-secondary">View more</a>
+        </div>
+      </div>
+      </div>
+</div>
+  </div>
+</div>
+
+
 
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
       <div class="col-md-5 p-lg-5 mx-auto my-5">
