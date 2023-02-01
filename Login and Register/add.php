@@ -1,17 +1,18 @@
 <?php
-include_once('connection.php');
+include('../db/db.php');
 
 if(isset($_POST['register']))
 {
     $name=$_POST['name'];
-    $username=$_POST['username'];
-    $pass=md5($_POST['password']);
+    $email=$_POST['email'];
+    $pass=$_POST['password'];
 
-    $sql   ="INSERT INTO `tbl_user`(`name`, `username`, `password`) VALUES ('$name','$username','$pass')";
+    $sql   ="INSERT INTO `tbl_user`(`name`, `email`, `password`) VALUES ('$name','$email','$pass')";
     $result=mysqli_query($conn,$sql);
     if($result){ 
-    header('location:index.php');
     echo"<script>alert('New User Register Success');</script>";   
+    header('location:../?page=login');
+    
     }else{
         die(mysqli_error($conn)) ;
     }

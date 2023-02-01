@@ -116,6 +116,7 @@
     
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
+    <link href="Login and Register/style.css" rel="stylesheet">
   </head>
   <body>
     
@@ -134,7 +135,7 @@
 
       <div class="col-md-3 text-end">
         <button type="button" class="btn btn-outline-primary me-2"><a href="?page=login" class="nav-link px-2 link-dark">Login</a></button>
-        <button type="button" class="btn btn-primary">Sign-up</button>
+        <button type="button" class="btn btn-primary"><a href="?page=register" class="nav-link px-2 link-dark">Sign-up</a></button>
       </div>
     </header>
   </div>

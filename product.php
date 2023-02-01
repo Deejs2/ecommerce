@@ -14,11 +14,23 @@
         <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
       </div>
     </nav>
+
+    
 <!---------third child------>
 <div class="bg-light">
   <h3 class="text-center">eNEPAL Store</h3>
   <p class="text-center">eNEPAL provide quality goods as well as on-time delivery of the product.</p>
 </div>
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+      <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">Punny headline</h1>
+        <p class="lead font-weight-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple's marketing pages.</p>
+        <a class="btn btn-outline-secondary" href="#">Coming soon</a>
+      </div>
+      <div class="product-device box-shadow d-none d-md-block"></div>
+      <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+    </div>
 
 <!-----fourth child----->
 <div class="row">
@@ -119,42 +131,7 @@
 
 
 
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-      <div class="col-md-5 p-lg-5 mx-auto my-5">
-        <h1 class="display-4 font-weight-normal">Punny headline</h1>
-        <p class="lead font-weight-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple's marketing pages.</p>
-        <a class="btn btn-outline-secondary" href="#">Coming soon</a>
-      </div>
-      <div class="product-device box-shadow d-none d-md-block"></div>
-      <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
-    </div>
+    
   
 
-    <?php
-            // Dynamic page load
-            $page = $_GET['page'];
-            $action = $_GET['action'];
-
-            switch ($page){
-                case 'pages':
-                    if($action == 'fruit'){
-                        include('page/fruit.php');
-                    }elseif ($action == 'create'){
-                        include('page/create.php');
-                    }elseif ($action == 'edit'){
-                        include('page/edit.php');
-                    }elseif ($action == 'delete'){
-                        include('page/delete.php');
-                    }else{
-                        include('page/list.php');
-                    }
-                    break;
-                case 'logout':
-                    include("logout.php");
-                    break;
-                default:
-                    include('product.php');
-            }
-            ?>
-
-  
+    

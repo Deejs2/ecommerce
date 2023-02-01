@@ -18,7 +18,10 @@ switch ($page){
         include("contact.php");
         break;
     case 'login':
-        include("login.php");
+        include("Login and Register/index.php");
+        break;
+    case 'register':
+        include("Login and Register/register.php");
         break;
     default:
         include("home.php");

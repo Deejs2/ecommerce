@@ -20,7 +20,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="?page=customer">
+            <a class="nav-link" href="?page=customer_pages&action=list">
               <span data-feather="users" class="align-text-bottom"></span>
               Customers
             </a>

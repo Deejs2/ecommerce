@@ -1,42 +1,47 @@
 <?php
 session_start();
-include_once('connection.php');
+include('../db/db.php');
 
 if (isset($_POST['login'])) {
 
-    $username = $_POST['username'];
-    $password = md5($_POST['password']);
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-    $sql = "SELECT * FROM `tbl_user` WHERE `username`='$username' AND `password`='$password'";
+    $sql = "SELECT * FROM `tbl_user` WHERE `email`='$email' AND `password`='$password'";
     $result = mysqli_query($conn, $sql);
 
-    if (empty($_POST['username']) && empty($_POST['password'])) {
-        echo "<script>alert('Please Fill Username and Password');</script>";
+    if (empty($_POST['email']) && empty($_POST['password'])) {
+        echo "<script>alert('Please Fill email and Password');</script>";
         exit;
     } elseif (empty($_POST['password'])) {
         echo "<script>alert('Please Fill Password');</script>";
         exit;
-    } elseif (empty($_POST['username'])) {
-        echo "<script>alert('Please Fill Username);</script>";
+    } elseif (empty($_POST['email'])) {
+        echo "<script>alert('Please Fill email);</script>";
         exit;
     } else {
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_array($result);
-            $name = $row['name'];
-            $username = $row['username'];
+            $email = $row['email'];
             $password = $row['password'];
 
 
-            if ($username == $username && $password == $password) {
-                $_SESSION['name'] = $name;
-                $_SESSION['username'] = $username;
+            if ($email == $email && $password == $password) {
+                $_SESSION['email'] = $email;
                 $_SESSION['password'] = $password;
-                header('location:welcome.php');
+                header('location:../admin/?page=dashboard');
             }
         } else {
-            echo "<script>alert('Invalid Username or Password');</script>";
+            echo "<h3>Invalid email or Password</h3>";
+            echo "<a href='../?page=login'>Go Back</a>";
             exit;
         }
     }
 
 }
+?>
+
+
+
+
+
