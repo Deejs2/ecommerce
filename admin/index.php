@@ -122,6 +122,19 @@ include('../db/db.php');
                       include('page/list.php');
                   }
                 break;
+              case 'article':
+                if($action == 'list'){
+                  include('article/list.php');
+                }elseif ($action == 'create'){
+                    include('article/create.php');
+                }elseif ($action == 'edit'){
+                    include('article/edit.php');
+                }elseif ($action == 'delete'){
+                    include('article/delete.php');
+                }else{
+                    include('article/list.php');
+                }
+                break;
               case 'customer':
                 include("customers.php");
                 break;

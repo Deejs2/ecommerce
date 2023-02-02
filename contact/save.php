@@ -10,5 +10,10 @@ $sql = "INSERT INTO tbl_contact(fname, lname, email, mobile, message) VALUES ('{
 $result = mysqli_query($conn, $sql) or die("Query Failed!");
 
 mysqli_close($conn);
+
+echo"<h2>Message Sent Successfully!</h2>";
+echo '<script>
+window.location = "../?page=contact";
+</script>';
 ?>
 

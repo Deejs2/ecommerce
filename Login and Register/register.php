@@ -7,7 +7,7 @@
           <div class="card text-black" style="border-radius: 25px;">
             <div class="card-body p-md-2">
               <div class="row justify-content-center">
-              <p class="text-center h1 fw-bold mb-4 mx-1 mx-md-3 mt-3">Sign up</p>
+              <p class="text-center h1 fw-bold mb-4 mx-1 mx-md-3 mt-3">Sign up for Admin</p>
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
                   

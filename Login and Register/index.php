@@ -25,7 +25,7 @@
         </div>
         <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
           <form action="Login and Register/login.php" method="post">
-            <p class="text-center h1 fw-bold mb-4 mx-1 mx-md-3 mt-3">Login </p>
+            <p class="text-center h1 fw-bold mb-4 mx-1 mx-md-3 mt-3">Login for Admin</p>
             
             <div class="form-outline mb-4">
               <label class="form-label" for="form1Example13"> <i class="bi bi-person-circle"></i> Email</label>

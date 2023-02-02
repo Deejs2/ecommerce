@@ -1,6 +1,4 @@
-<?php 
-include('db.php');
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +6,14 @@ include('db.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact/style.css">
 </head>
 <body>
     <div class="contact-form">
         <h1>DATABASE FORM</h1>
     </div>
     <div class="contact-us">
-       <form action="save.php" method="post">
+       <form action="http://localhost/e-commerce/contact/save.php" method="post">
            <input type="text" name="fname"   class="form-control" placeholder="Enter First Name"> <br>
            <input type="text" name="lname"  class="form-control" placeholder="Enter last Name"> <br>
            <input type="email" name="email"  class="form-control" placeholder="Enter Email"> <br>
