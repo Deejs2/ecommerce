@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2023 at 07:19 AM
+-- Generation Time: Feb 02, 2023 at 04:47 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -20,6 +20,69 @@ SET time_zone = "+00:00";
 --
 -- Database: `enepal`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_article`
+--
+
+CREATE TABLE `tbl_article` (
+  `id` int(20) NOT NULL,
+  `filename` varchar(100) NOT NULL,
+  `title` text NOT NULL,
+  `sub_title` text NOT NULL,
+  `content` text NOT NULL,
+  `created_date` datetime DEFAULT current_timestamp(),
+  `publish` tinyint(1) NOT NULL,
+  `updated_date` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_article`
+--
+
+INSERT INTO `tbl_article` (`id`, `filename`, `title`, `sub_title`, `content`, `created_date`, `publish`, `updated_date`) VALUES
+(1, 'champ.jpg', 'Shoes', 'The brand! Accept us.', 'This shoes is new in the market!', '2023-02-02 20:38:44', 1, '2023-02-02 16:01:59'),
+(11, 'lion1.jpg', 'Lion', 'Animal', 'King of the jungle.', '2023-02-02 16:40:44', 1, '2023-02-02 16:40:44');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_carousel`
+--
+
+CREATE TABLE `tbl_carousel` (
+  `id` int(11) NOT NULL,
+  `filename` varchar(100) NOT NULL,
+  `title` text NOT NULL,
+  `content` text NOT NULL,
+  `publish` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_contact`
+--
+
+CREATE TABLE `tbl_contact` (
+  `id` int(10) NOT NULL,
+  `fname` text NOT NULL,
+  `lname` text NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `mobile` text NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_contact`
+--
+
+INSERT INTO `tbl_contact` (`id`, `fname`, `lname`, `email`, `mobile`, `message`) VALUES
+(1, '', '', '', '', ''),
+(2, 'admin', 'jirel', 'admin22@enepal.com', '9862506862', 'hi'),
+(3, 'admin', 'jirel', 'admin22@enepal.com', '9862506862', 'hello');
 
 -- --------------------------------------------------------
 
@@ -42,7 +105,7 @@ CREATE TABLE `tbl_customer` (
 --
 
 INSERT INTO `tbl_customer` (`id`, `name`, `gender`, `address`, `created_date`, `updated_date`, `publish`) VALUES
-(1, 'Sita Basnet', 'Male', 'Boudha', '2023-02-01 00:58:00', '2023-01-31 20:18:14', 1);
+(1, 'customer', 'female', 'boudha', '2023-02-01 12:32:21', '2023-02-01 12:32:21', 1);
 
 -- --------------------------------------------------------
 
@@ -65,9 +128,9 @@ CREATE TABLE `tbl_page` (
 --
 
 INSERT INTO `tbl_page` (`image`, `id`, `title`, `content`, `publish`, `created_date`, `updated_date`) VALUES
-('', 1, '', '', 1, '2023-01-25 19:37:18', '2023-01-31 20:08:59'),
-('', 2, 'Glossaries', 'Fresh and Clean glossary items to buy!', 1, '2023-01-28 12:41:33', '2023-01-28 12:41:33'),
-('', 3, 'Clothes', 'Let\'s shop New and Trending Fashion clothes ', 1, '2023-01-28 12:41:33', '2023-01-28 12:41:33');
+('', 1, 'Food_nepali-ganngnizs', 'Food is basic need of life', 1, '2023-02-01 12:38:19', '2023-02-02 01:55:51'),
+('', 2, 'Glossaries-Nepalhj-k', 'Fresh and Clean glossary items to buy!', 1, '2023-01-28 12:41:33', '2023-02-01 17:06:41'),
+('', 4, 'Fashion-clock', 'Trending clothes!', 1, '2023-02-01 17:19:47', '2023-02-01 17:36:04');
 
 -- --------------------------------------------------------
 
@@ -119,6 +182,24 @@ INSERT INTO `tbl_user` (`id`, `name`, `email`, `password`) VALUES
 --
 
 --
+-- Indexes for table `tbl_article`
+--
+ALTER TABLE `tbl_article`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_carousel`
+--
+ALTER TABLE `tbl_carousel`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_contact`
+--
+ALTER TABLE `tbl_contact`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
@@ -147,6 +228,24 @@ ALTER TABLE `tbl_user`
 --
 
 --
+-- AUTO_INCREMENT for table `tbl_article`
+--
+ALTER TABLE `tbl_article`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `tbl_carousel`
+--
+ALTER TABLE `tbl_carousel`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_contact`
+--
+ALTER TABLE `tbl_contact`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
@@ -156,7 +255,7 @@ ALTER TABLE `tbl_customer`
 -- AUTO_INCREMENT for table `tbl_page`
 --
 ALTER TABLE `tbl_page`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tbl_product`
