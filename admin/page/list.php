@@ -1,5 +1,5 @@
 <?php
-$sql = "SELECT id, title, content, publish, created_date, updated_date FROM tbl_page";
+$sql = "SELECT id, title, content, filename, publish, created_date, updated_date FROM tbl_page";
 $result = $conn->query($sql);
 ?>
 
@@ -15,6 +15,7 @@ $result = $conn->query($sql);
                 <th>ID</th>
                 <th>Title</th>
                 <th>Content</th>
+                <th>Image</th>
                 <th>Created On</th>
                 <th>Last Updated On</th>
                 <th>Publish</th>
@@ -30,6 +31,7 @@ $result = $conn->query($sql);
                     <td><?php echo $row['id'] ?></td>
                     <td><?php echo $row['title'] ?></td>
                     <td><?php echo $row['content'] ?></td>
+                    <td><?php echo $row['filename'] ?></td>
                     <td><?php echo $row['created_date'] ?></td>
                     <td><?php echo $row['updated_date'] ?></td>
                     <td><?php echo $row['publish'] ? 'YES': 'NO' ?></td>

@@ -11,6 +11,9 @@ switch ($page){
     case 'product':
         include("product.php");
         break;
+        case 'product-buy':
+            include("product-buy.php");
+            break;
     case 'about':
         include("about.php");
         break;
@@ -23,6 +26,13 @@ switch ($page){
     case 'register':
         include("Login and Register/register.php");
         break;
+
+        case 'login-customer':
+            include("customer_Login-Register/index.php");
+            break;
+        case 'register-customer':
+            include("customer_Login-Register/register.php");
+            break;
     default:
         include("home.php");
 }

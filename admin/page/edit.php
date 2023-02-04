@@ -10,7 +10,19 @@ if (isset($_POST['submit'])) {
 //    $insertQuery = "UPDATE tbl_page (title, content, publish, updated_date)
 //    VALUES ('$title', '$content', '$publish', '$date') WHERE id = $id";
 
-    $updateQuery = "UPDATE tbl_page SET title='$title', content='$content', publish='$publish', updated_date='$date' WHERE id = $id";
+ //file upload 
+ $filename = $_FILES["uploadfile"]["name"];
+ $tempname = $_FILES["uploadfile"]["tmp_name"];
+ $folder = "uploaded_img/" . $filename;
+
+ // Now let's move the uploaded image into the folder: image
+ if (move_uploaded_file($tempname, $folder)) {
+     echo "<h3>  Image uploaded successfully!</h3>";
+ } else {
+     echo "<h3>  Failed to upload image!</h3>";
+ }
+
+    $updateQuery = "UPDATE tbl_page SET title='$title', content='$content', filename='$filename', publish='$publish', updated_date='$date' WHERE `tbl_page`.`id` = $id";
     $result = $conn->query($updateQuery);
 
     if ($conn->insert_id) {
@@ -25,7 +37,7 @@ window.location = "?page=dashboard";
 </script>';
 }
 
-$sql = "SELECT id, title, content, publish FROM tbl_page WHERE id = $id";
+$sql = "SELECT id, title, content,filename, publish FROM tbl_page WHERE id = $id";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 ?>
@@ -44,6 +56,10 @@ $row = $result->fetch_assoc();
         <label>Content</label>
         <textarea class="form-control" required name="content"><?php echo $row['content']; ?></textarea>
     </div>
+
+    <div class="form-group">
+                <input class="form-control" type="file" name="uploadfile" value="<?php echo $row['filename'] ?>" />
+            </div>
 
     <div class="form-group">
         <label>Publish</label>
