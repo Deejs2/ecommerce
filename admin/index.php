@@ -98,6 +98,43 @@ include('../db/db.php');
             $action = $_GET['action'];
 
             switch ($page){
+              case 'customer_pages':
+                if($action == 'list'){
+                  include('customer_list/list.php');
+                }elseif ($action == 'create'){
+                    include('customer_list/create.php');
+                }elseif ($action == 'delete'){
+                    include('customer_list/delete.php');
+                }else{
+                    include('customer_list/list.php');
+                }
+                break;
+              case 'pages':
+                  if($action == 'list'){
+                    include('page/list.php');
+                  }elseif ($action == 'create'){
+                      include('page/create.php');
+                  }elseif ($action == 'edit'){
+                    include('page/edit.php');
+                  }elseif ($action == 'delete'){
+                      include('page/delete.php');
+                  }else{
+                      include('page/list.php');
+                  }
+                break;
+              case 'article':
+                if($action == 'list'){
+                  include('article/list.php');
+                }elseif ($action == 'create'){
+                    include('article/create.php');
+                }elseif ($action == 'edit'){
+                    include('article/edit.php');
+                }elseif ($action == 'delete'){
+                    include('article/delete.php');
+                }else{
+                    include('article/list.php');
+                }
+                break;
               case 'customer':
                 include("customers.php");
                 break;
