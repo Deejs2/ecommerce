@@ -43,7 +43,7 @@
         <div class="card-body">
           <h5 class="card-title"></h5>
           <p class="card-text"></p>
-          <a href="#" class="btn btn-info">Add to cart</a>
+          <a href="?page=login-customer" class="btn btn-info">Add to cart</a>
           <a href="#" class="btn btn-secondary">View more</a>
         </div>
       </div>
@@ -54,7 +54,7 @@
         <div class="card-body">
           <h5 class="card-title"></h5>
           <p class="card-text"></p>
-          <a href="#" class="btn btn-info">Add to cart</a>
+          <a href="?page=login-customer" class="btn btn-info">Add to cart</a>
           <a href="#" class="btn btn-secondary">View more</a>
         </div>
       </div>
@@ -65,7 +65,7 @@
         <div class="card-body">
           <h5 class="card-title"></h5>
           <p class="card-text"></p>
-          <a href="#" class="btn btn-info">Add to cart</a>
+          <a href="?page=login-customer" class="btn btn-info">Add to cart</a>
           <a href="#" class="btn btn-secondary">View more</a>
         </div>
       </div>
