@@ -16,7 +16,6 @@ $result = $conn->query($sql);
 
                 <h2><?php echo $row['title'] ?></h2>
                 <p><?php echo $row['content'] ?></p>
-                <p>Image_name:<?php echo $row['filename'] ?></p>
                 <p><a class="btn btn-secondary" href="?page=product">View details &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
             <?php

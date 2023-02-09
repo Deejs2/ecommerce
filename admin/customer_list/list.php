@@ -1,5 +1,5 @@
 <?php
-$sql = "SELECT id, name, gender, address, created_date, updated_date, publish FROM tbl_customer";
+$sql = "SELECT id, name, email, password, gender, address, created_date, updated_date, publish FROM tbl_customer";
 $result = $conn->query($sql);
 ?>
 
@@ -15,6 +15,8 @@ $result = $conn->query($sql);
                 <th>ID</th>
                 <th>Name</th>
                 <th>Gender</th>
+                <th>Email</th>
+                <th>Password</th>
                 <th>Address</th>
                 <th>Created_Date</th>
                 <th>Updated_Date</th>
@@ -30,6 +32,8 @@ $result = $conn->query($sql);
                 <tr>
                     <td><?php echo $row['id'] ?></td>
                     <td><?php echo $row['name'] ?></td>
+                    <td><?php echo $row['email'] ?></td>
+                    <td><?php echo $row['password'] ?></td>
                     <td><?php echo $row['gender'] ?></td>
                     <td><?php echo $row['address'] ?></td>
                     <td><?php echo $row['created_date'] ?></td>

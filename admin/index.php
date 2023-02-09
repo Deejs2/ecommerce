@@ -98,6 +98,18 @@ include('../db/db.php');
             $action = $_GET['action'];
 
             switch ($page){
+              case 'carousel':
+                if($action == 'list'){
+                  include('carousel/list.php');
+                }elseif ($action == 'create'){
+                    include('carousel/create.php');
+                }elseif ($action == 'delete'){
+                    include('carousel/delete.php');
+                }else{
+                    include('carousel/list.php');
+                }
+                break;
+
               case 'customer_pages':
                 if($action == 'list'){
                   include('customer_list/list.php');

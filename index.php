@@ -18,7 +18,7 @@ switch ($page){
         include("about.php");
         break;
     case 'contact':
-        include("contact/contactfrom.php");
+        include("non-used/contact.php");
         break;
     case 'login':
         include("Login and Register/index.php");

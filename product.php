@@ -49,11 +49,11 @@ while($row=mysqli_fetch_assoc($result_query)){
   $product_price=$row['product_price'];
   echo"<div class='col-md-3 mb-2'>
   <div class='card'>
-  <img src='./admin/product_images/$product_image1' class='card-img-top' alt='...'>
+  <img src='admin/product_images/$product_image1' class='card-img-top' alt='...'>
   <div class='card-body'>
     <h5 class='card-title'>$product_title</h5>
     <p class='card-text'>$product_description</p>
-    <a href='#' class='btn btn-info'>Add to cart</a>
+    <a href='?page=login-customer' class='btn btn-info'>Add to cart</a>
     <a href='#' class='btn btn-secondary'>View more</a>
   </div>
 </div>
@@ -62,95 +62,6 @@ while($row=mysqli_fetch_assoc($result_query)){
 
 
 ?>
-      <!----<div class="col-md-3 mb-2">
-        <div class="card">
-        <img src="./img/dairymilk-silk.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text"></p>
-          <a href="?page=login-customer" class="btn btn-info">Add to cart</a>
-          <a href="#" class="btn btn-secondary">View more</a>
-        </div>
-      </div>
-      </div>----->
-      <!-----<div class="col-md-3 mb-2">
-      <div class="card">
-        <img src="./img/apple.jfif" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text"></p>
-          <a href="?page=login-customer" class="btn btn-info">Add to cart</a>
-          <a href="#" class="btn btn-secondary">View more</a>
-        </div>
-      </div>
-      </div>
-      <div class="col-md-3 mb-2">
-      <div class="card">
-        <img src="./img/mango.jfif" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text"></p>
-          <a href="?page=login-customer" class="btn btn-info">Add to cart</a>
-          <a href="#" class="btn btn-secondary">View more</a>
-        </div>
-      </div>
-</div>
-      <div class="col-md-3 mb-2">
-        <div class="card">
-        <img src="./img/dairymilk-silk.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-info">Add to cart</a>
-          <a href="#" class="btn btn-secondary">View more</a>
-        </div>
-      </div>
-      </div>
-      <div class="col-md-3 mb-2">
-        <div class="card">
-        <img src="./img/dairymilk-silk.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-info">Add to cart</a>
-          <a href="#" class="btn btn-secondary">View more</a>
-        </div>
-      </div>
-      </div>
-      <div class="col-md-3 mb-2">
-        <div class="card">
-        <img src="./img/dairymilk-silk.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-info">Add to cart</a>
-          <a href="#" class="btn btn-secondary">View more</a>
-        </div>
-      </div>
-      </div>
-      <div class="col-md-3 mb-2">
-        <div class="card">
-        <img src="./img/dairymilk-silk.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-info">Add to cart</a>
-          <a href="#" class="btn btn-secondary">View more</a>
-        </div>
-      </div>
-      </div>
-      <div class="col-md-3 mb-2">
-        <div class="card">
-        <img src="./img/dairymilk-silk.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-info">Add to cart</a>
-          <a href="#" class="btn btn-secondary">View more</a>
-        </div>
-      </div>
-      </div>----->
-      <!---row end--->
 </div>
 <!----column end---->
   </div>

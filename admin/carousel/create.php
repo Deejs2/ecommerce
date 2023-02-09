@@ -8,7 +8,7 @@ if(isset($_POST['submit'])) {
         //file upload 
     $filename = $_FILES["uploadfile"]["name"];
     $tempname = $_FILES["uploadfile"]["tmp_name"];
-    $folder = "uploaded_img/" . $filename;
+    $folder = "carousel/img/" . $filename;
  
     // Now let's move the uploaded image into the folder: image
     if (move_uploaded_file($tempname, $folder)) {

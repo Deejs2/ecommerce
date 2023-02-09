@@ -32,8 +32,8 @@ $result = $conn->query($sql);
                     <td><?php echo $row['content'] ?></td>
                     <td><?php echo $row['publish'] ? 'YES': 'NO' ?></td>
                     <td>
-                        <a href="?page=pages&action=edit&id=<?php echo $row['id'] ?>">Edit</a>
-                        <a href="?page=pages&action=delete&id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure?')">Delete</a>
+                        <a href="?page=carousel&action=edit&id=<?php echo $row['id'] ?>">Edit</a>
+                        <a href="?page=carousel&action=delete&id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure?')">Delete</a>
                     </td>
                 </tr>
             <?php
@@ -41,6 +41,6 @@ $result = $conn->query($sql);
             }
             ?>
         </tbody>
-        <button class="btn btn-outline-secondary" type="button"><a href="?page=pages&action=create">Create</a></button>
+        <button class="btn btn-outline-secondary" type="button"><a href="?page=carousel&action=create">Create</a></button>
     </table>
     </div>
