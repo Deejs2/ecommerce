@@ -1,42 +1,35 @@
-<!-----<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2">Products</h1>
-</div>----->
-<!-----connect file---->
 <?php
 include('../db/db.php');
-if(isset($_POST['insert_products'])){
-//$product_id=$_POST['product_id'];
-$product_title=$_POST['product_title'];
-$product_description=$_POST['product_description'];
-$product_price=$_POST['product_price'];
+$product_id=$_GET['updateid'];
+$sql="Select * from `tbl_product` where product_id=$product_id";
+$result=mysqli_query($conn,$sql);
+$row=mysqli_fetch_assoc($result);
+$product_title=$row['product_title'];
+$product_description=$row['product_description'];
+$product_image1=$row['product_image1'];
+$product_price=$row['product_price'];
+ 
+    if(isset($_POST['submit'])){
+        $product_title=$_POST['product_title'];
+        $product_description=$_POST['product_description'];
+        $product_image1=$_POST['product_image1'];
+        $product_price=$_POST['product_price'];
 
-//accessing images
-$product_image1=$_FILES['product_image1']['name'];
+        $sql="update `tbl_product` set product_id=$product_id,product_title='$product_title',
+        product_description='$product_description',product_image1='$product_image1',product_price='$product_price'
+        where product_id=$product_id";
+        $result=mysqli_query($conn,$sql);
+        if($result){
+            header('location:http://localhost/ecommerce/admin/?page=product');
+        }else{
+            die(mysqli_error($conn));
+        }
+    }
+    
 
-
-//accessing image tmp name
-$temp_image1=$_FILES['product_image1']['tmp_name'];
-
-
-//checking empty condition
-if($product_title=='' or $product_description=='' or $product_price=='' or $product_image1=='' ){
-  echo"<script>alert('Please fill all the available fields')</script>";
-  exit();
-}else{
-  move_uploaded_file($temp_image1,"./product_images/$product_image1");
-
-
-  //insert query
-  $insert_product="insert into `tbl_product` ( product_title,product_description,product_image1,product_price) values ('$product_title','$product_description','$product_image1','$product_price')";
-  $result_query=mysqli_query($conn,$insert_product
-);
-  if($result_query){
-    echo "<script>alert('Sucessfully inserted the product')</script>";
-  }
-}
-
-}
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +55,7 @@ if($product_title=='' or $product_description=='' or $product_price=='' or $prod
 </head>
 <body class="bg-light">
   <div class="container mt-3">
-    <h1 class="text-center">Insert Products</h1>
+    <h1 class="text-center">Update Products</h1>
     <!------form------>
     <form action="" method="post" enctype="multipart/form-data">
       <!----<div class="form-outline mb-4 w-50 m-auto">
@@ -77,7 +70,7 @@ if($product_title=='' or $product_description=='' or $product_price=='' or $prod
         <input type="text" name="product_title"
         id="product_title" class="form-control"
         placeholder="Enter product title" autocomplete="off"
-        required="required">
+        required="required" value=<?php echo $product_title?>>
       </div>
       <!---description---->
       <div class="form-outline mb-4 w-50 m-auto">
@@ -85,7 +78,7 @@ if($product_title=='' or $product_description=='' or $product_price=='' or $prod
         <input type="text" name="product_description"
         id="product_description" class="form-control"
         placeholder="Enter product description" autocomplete="off"
-        required="required">
+        required="required" value=<?php echo $product_description?>>
       </div>
 
       
@@ -98,7 +91,7 @@ if($product_title=='' or $product_description=='' or $product_price=='' or $prod
         <label for="product_image1" class="form-label">Product image1</label>
         <input type="file" name="product_image1"
         id="product_image1" class="form-control"
-        required="required">
+        required="required" value=<?php echo $product_image1?>>
       </div>
     
       <!-------product price----->
@@ -107,65 +100,12 @@ if($product_title=='' or $product_description=='' or $product_price=='' or $prod
         <input type="text" name="product_price"
         id="product_price" class="form-control"
         placeholder="Enter product price" autocomplete="off"
-        required="required">
+        required="required" value=<?php echo $product_price?>>
       </div>
             <!-------button----->
             <div class="form-outline mb-4 w-50 m-auto">
-            <input type="submit" name="insert_products" class="btn
-            btn-info md-3 px-3" value="Insert products">
+            <input type="submit" name="Update" class="btn
+            btn-info md-3 px-3" value="Update">
       </div>
     </form>
   </div>
-
-
-
-  
-  <!-----delete and edit part----->
-  <div class="container">
-  <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">product_id</th>
-      <th scope="col">product_title</th>
-      <th scope="col">product_description</th>
-      <th scope="col">product_image1</th>
-      <th scope="col">product_price</th>
-      <th scope="col">Operation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php
-$select_query="select * from `tbl_product`";
-$result_query=mysqli_query($conn,$select_query);
-while($row=mysqli_fetch_assoc($result_query)){
-  $product_id=$row['product_id'];
-  $product_title=$row['product_title'];
-  $product_description=$row['product_description'];
-  $product_image1=$row['product_image1'];
-  $product_price=$row['product_price'];
-  echo '
-  <tr>
-      <th scope="row">'.$product_id.'</th>
-      <td>'.$product_title.'</td>
-      <td>'.$product_description.'</td>
-      <td>'.$product_image1.'</td>
-      <td>'.$product_price.'</td>
-      <td>
-      <button class="btn btn-primary"><a href="update.php?
-      updateid='.$product_id.'"class="text-light">Update</a></button>
-      <button class="btn btn-danger"><a href="delete.php?
-      deleteid='.$product_id.'"class="text-light">Delete</a></button>
-    </td>
-    </tr>';
-}
-
-
-    ?>
-  
-    
-  </tbody>
-</table>
-</div>
-  
-</body>
-</html>
