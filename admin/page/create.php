@@ -41,7 +41,7 @@ window.location = "?page=dashboard";
     <h1 class="h2">Create Page</h1>
 </div>
 
-<form method="post" action="">
+<form method="post" action="" enctype="multipart/form-data">
     <div class="form-group">
         <label>Title</label>
         <input type="text" name="title" class="form-control" required />

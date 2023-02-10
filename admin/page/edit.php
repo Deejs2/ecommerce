@@ -46,7 +46,7 @@ $row = $result->fetch_assoc();
     <h1 class="h2">Edit Page</h1>
 </div>
 
-<form method="post" action="">
+<form method="post" action="" enctype="multipart/form-data">
     <div class="form-group">
         <label>Title</label>
         <input type="text" class="form-control" required name="title" value="<?php echo $row['title']; ?>"/>
