@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
         echo "<h3>  Failed to upload image!</h3>";
     }
 
-    $updateQuery = "UPDATE tbl_article SET title='$title', sub_title='$sub_title', content='$content', filename=$filename, publish='$publish', updated_date='$date' WHERE id = $id";
+    $updateQuery = "UPDATE tbl_article SET title='$title', sub_title='$sub_title', content='$content', filename='$filename', publish='$publish', updated_date='$date' WHERE id = $id";
     $result = $conn->query($updateQuery);
 
     if ($conn->insert_id) {
@@ -47,7 +47,7 @@ $row = $result->fetch_assoc();
     <h1 class="h2">Edit Article</h1>
 </div>
 
-<form method="post" action="">
+<form method="post" action="" enctype="multipart/form-data">
     <div class="form-group">
         <label>Title</label>
         <input type="text" class="form-control" required name="title" value="<?php echo $row['title']; ?>"/>

@@ -9,10 +9,10 @@ switch ($page){
         include("home.php");
         break;
     case 'product':
-        include("product.php");
+        include("product/product.php");
         break;
         case 'product-buy':
-            include("product-buy.php");
+            include("product/product-buy.php");
             break;
     case 'about':
         include("about.php");

@@ -3,7 +3,6 @@
 </div>----->
 <!-----connect file---->
 <?php
-include('../db/db.php');
 if(isset($_POST['insert_products'])){
 //$product_id=$_POST['product_id'];
 $product_title=$_POST['product_title'];
@@ -151,9 +150,9 @@ while($row=mysqli_fetch_assoc($result_query)){
       <td>'.$product_image1.'</td>
       <td>'.$product_price.'</td>
       <td>
-      <button class="btn btn-primary"><a href="update.php?
-      updateid='.$product_id.'"class="text-light">Update</a></button>
-      <button class="btn btn-danger"><a href="delete.php?
+      <button class="btn btn-primary"><a href="?page=product&action=edit&
+updateid='.$product_id.'"class="text-light">Update</a></button>
+      <button class="btn btn-danger"><a href="product/delete.php?
       deleteid='.$product_id.'"class="text-light">Delete</a></button>
     </td>
     </tr>';

@@ -103,6 +103,8 @@ include('../db/db.php');
                   include('carousel/list.php');
                 }elseif ($action == 'create'){
                     include('carousel/create.php');
+                }elseif ($action == 'edit'){
+                  include('carousel/edit.php');
                 }elseif ($action == 'delete'){
                     include('carousel/delete.php');
                 }else{
@@ -150,9 +152,15 @@ include('../db/db.php');
               case 'customer':
                 include("customers.php");
                 break;
-              case 'product':
-                include("products.php");
-                break;
+                case 'product':
+                  if ($action == 'edit'){
+                      include('product/update.php');
+                  }elseif ($action == 'delete'){
+                      include('product/delete.php');
+                  }else{
+                      include('product/products.php');
+                  }
+                  break;
               case 'order':
                 include("orders.php");
                 break;

@@ -29,7 +29,7 @@ if (isset($_POST['login'])) {
             if ($email == $email && $password == $password) {
                 $_SESSION['email'] = $email;
                 $_SESSION['password'] = $password;
-                header('location: ../?page=product-buy');
+                header('location: ../customer/?page=dashboard');
             }
         } else {
             echo "<h3>Invalid email or Password</h3>";

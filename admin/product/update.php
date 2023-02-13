@@ -1,5 +1,6 @@
+
+
 <?php
-include('../db/db.php');
 $product_id=$_GET['updateid'];
 $sql="Select * from `tbl_product` where product_id=$product_id";
 $result=mysqli_query($conn,$sql);
@@ -20,7 +21,10 @@ $product_price=$row['product_price'];
         where product_id=$product_id";
         $result=mysqli_query($conn,$sql);
         if($result){
-            header('location:http://localhost/ecommerce/admin/?page=product');
+            // header('Location:?page=dashboard'); // Redirect to page list
+   echo '<script>
+   window.location = "?page=product";
+   </script>';
         }else{
             die(mysqli_error($conn));
         }
@@ -104,7 +108,7 @@ $product_price=$row['product_price'];
       </div>
             <!-------button----->
             <div class="form-outline mb-4 w-50 m-auto">
-            <input type="submit" name="Update" class="btn
+            <input type="submit" name="submit" class="btn
             btn-info md-3 px-3" value="Update">
       </div>
     </form>
