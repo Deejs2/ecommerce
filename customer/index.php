@@ -27,6 +27,7 @@ include('../db/db.php');
         <?php
             // Dynamic page load
             $page = $_GET['page'];
+            $action = $_GET['action'];
 
             switch ($page){
                 case 'dashboard':
@@ -41,6 +42,18 @@ include('../db/db.php');
                         case 'product':
                           include("product.php");
                           break;
+                            case 'cart':
+                              if ($action == 'create'){
+                                  include('cart/create.php');
+                              }elseif ($action == 'delete'){
+                                  include('cart/delete.php');
+                              }else{
+                                  include('cart/list.php');
+                              }
+                              break;
+                              case 'buy':
+                                include("checkout.php");
+                                break;
                     case 'logout':
                         include("logout.php");
                         break;

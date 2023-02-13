@@ -6,25 +6,25 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page">
+        <a href="?page=home" class="nav-link active" aria-current="page">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
           Home
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link link-dark">
+        <a href="?page=dashboard" class="nav-link link-dark">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
           Dashboard
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link link-dark">
+        <a href="?page=order" class="nav-link link-dark">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
           Orders
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link link-dark">
+        <a href="?page=product" class="nav-link link-dark">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
           Products
         </a>

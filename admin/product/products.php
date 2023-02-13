@@ -26,7 +26,7 @@ if($product_title=='' or $product_description=='' or $product_price=='' or $prod
 
 
   //insert query
-  $insert_product="insert into `tbl_product` ( product_title,product_description,product_image1,product_price) values ('$product_title','$product_description','$product_image1','$product_price')";
+  $insert_product="INSERT into `tbl_product` ( product_title,product_description,product_image1,product_price) values ('$product_title','$product_description','$product_image1','$product_price')";
   $result_query=mysqli_query($conn,$insert_product
 );
   if($result_query){
@@ -134,7 +134,7 @@ if($product_title=='' or $product_description=='' or $product_price=='' or $prod
   </thead>
   <tbody>
     <?php
-$select_query="select * from `tbl_product`";
+$select_query="SELECT * from `tbl_product`";
 $result_query=mysqli_query($conn,$select_query);
 while($row=mysqli_fetch_assoc($result_query)){
   $product_id=$row['product_id'];

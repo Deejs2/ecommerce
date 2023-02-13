@@ -1,11 +1,3 @@
-<?php
-
-echo "<h3>Customer are able to buy products after login in this page</h3>";
-
-
-
-?>
-
 <link href="css/product.css" rel="stylesheet">
 
     <nav class="site-header sticky-top py-1">
@@ -19,7 +11,7 @@ echo "<h3>Customer are able to buy products after login in this page</h3>";
         <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
+        <a class="py-2 d-none d-md-inline-block" href="?page=cart">Cart</a>
       </div>
     </nav>
 
@@ -61,11 +53,11 @@ while($row=mysqli_fetch_assoc($result_query)){
   $product_price=$row['product_price'];
   echo"<div class='col-md-3 mb-2'>
   <div class='card'>
-  <img src='admin/product_images/$product_image1' class='card-img-top' alt='...'>
+  <img src='../admin/product_images/$product_image1' class='card-img-top' alt='...'>
   <div class='card-body'>
     <h5 class='card-title'>$product_title</h5>
     <p class='card-text'>$product_description</p>
-    <a href='?page=cart' class='btn btn-info'>Add to cart</a>
+    <a href='?page=cart&action=create' class='btn btn-info'>Add to cart</a>
     <a href='#' class='btn btn-secondary'>View more</a>
   </div>
 </div>
