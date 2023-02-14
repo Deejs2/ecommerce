@@ -1,4 +1,13 @@
-    
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="eNepal contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>eNepal_Customer(Top Shopping Website)</title>    
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="bootstrap" viewBox="0 0 118 94">
     <title>Bootstrap</title>

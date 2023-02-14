@@ -70,7 +70,7 @@ window.location = "?page=product&action=order";
             while($fetch_cart = mysqli_fetch_assoc($cart_query)){
       ?>
          <tr>
-            <td><img src="cart/images/<?php echo $fetch_cart['image']; ?>" height="100" alt=""></td>
+            <td><img src="../admin/product_images/<?php echo $fetch_cart['image']; ?>" height="100" alt=""></td>
             <td><?php echo $fetch_cart['name']; ?></td>
             <td>$<?php echo $fetch_cart['price']; ?>/-</td>
             <td>

@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="author" content="eNepal contributors">
     <meta name="generator" content="Hugo 0.108.0">
-    <title>Carousel Template · Bootstrap v5.3</title>
+    <title>eNepal(Top Shopping Website)</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
 
