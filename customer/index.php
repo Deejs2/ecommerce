@@ -1,18 +1,33 @@
 
+
 <?php
 session_start();
+
+include('../db/db.php');
 
 if(!isset($_SESSION['email'])){
     header('Location:../?page=login-customer');
 }
 
-include('../db/db.php');
 ?>
 
 
 <!-- Custom styles for this template -->
     <link href="../admin/design/dashboard.css" rel="stylesheet">
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+       <!-- custom css file link  -->
+   <link rel="stylesheet" href="cart/css/style.css">
+   <link rel="stylesheet" href="../css/product.css">
+
+    <style> 
+.col-md-9 {
+  flex: 0 0 auto;
+  width: 80% !important;
+}
+.col-md-3 {
+  flex: 0 0 auto;
+  width: 33%;
+}</style>
 
   </head>
   <body>
@@ -23,7 +38,7 @@ include('../db/db.php');
     <div class="row">
         <?php include("common/sidebar.php"); ?>
 
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <main class="col-md-9 ms-sm-auto px-md-4">
         <?php
             // Dynamic page load
             $page = $_GET['page'];
@@ -40,20 +55,16 @@ include('../db/db.php');
                         include("order.php");
                         break;
                         case 'product':
-                          include("product.php");
+                          if ($action == 'cart'){
+                              include('cart/product.php');
+                          }elseif ($action == 'buy'){
+                              include('cart/checkout.php');
+                          }elseif ($action == 'order'){
+                            include('cart/order.php');
+                        }else{
+                              include('index.php');
+                          }
                           break;
-                            case 'cart':
-                              if ($action == 'create'){
-                                  include('cart/create.php');
-                              }elseif ($action == 'delete'){
-                                  include('cart/delete.php');
-                              }else{
-                                  include('cart/list.php');
-                              }
-                              break;
-                              case 'buy':
-                                include("checkout.php");
-                                break;
                     case 'logout':
                         include("logout.php");
                         break;

@@ -1,12 +1,12 @@
 
-<div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 210px;">
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 250px;">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
       <span class="fs-4">eNepal</span>
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="?page=home" class="nav-link active" aria-current="page">
+        <a href="?page=home" class="nav-link link-dark" aria-current="page">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
           Home
         </a>
@@ -18,13 +18,13 @@
         </a>
       </li>
       <li>
-        <a href="?page=order" class="nav-link link-dark">
+        <a href="?page=product&action=order" class="nav-link link-dark">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
           Orders
         </a>
       </li>
       <li>
-        <a href="?page=product" class="nav-link link-dark">
+        <a href="?page=product&action=cart" class="nav-link link-dark">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
           Products
         </a>
@@ -41,7 +41,7 @@
         <li><a class="dropdown-item" href="#">Settings</a></li>
         <li><a class="dropdown-item" href="#">Profile</a></li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="?page=logout">Sign out</a></li>
+        <li><a class="dropdown-item" href="?page=logout" onclick="return confirm('are your sure you want to logout?');">Sign out</a></li>
       </ul>
     </div>
   </div>
