@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2023 at 04:47 PM
+-- Generation Time: Feb 14, 2023 at 04:02 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -24,6 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `id` int(100) NOT NULL,
+  `user_id` int(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `price` varchar(100) NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `quantity` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `user_id`, `name`, `price`, `image`, `quantity`) VALUES
+(1, 1, 'smart phone', '30000', 'product-1.jpg', 10);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_article`
 --
 
@@ -32,7 +54,7 @@ CREATE TABLE `tbl_article` (
   `filename` varchar(100) NOT NULL,
   `title` text NOT NULL,
   `sub_title` text NOT NULL,
-  `content` text NOT NULL,
+  `content` varchar(100) NOT NULL,
   `created_date` datetime DEFAULT current_timestamp(),
   `publish` tinyint(1) NOT NULL,
   `updated_date` datetime DEFAULT current_timestamp()
@@ -43,8 +65,10 @@ CREATE TABLE `tbl_article` (
 --
 
 INSERT INTO `tbl_article` (`id`, `filename`, `title`, `sub_title`, `content`, `created_date`, `publish`, `updated_date`) VALUES
-(1, 'champ.jpg', 'Shoes', 'The brand! Accept us.', 'This shoes is new in the market!', '2023-02-02 20:38:44', 1, '2023-02-02 16:01:59'),
-(11, 'lion1.jpg', 'Lion', 'Animal', 'King of the jungle.', '2023-02-02 16:40:44', 1, '2023-02-02 16:40:44');
+(1, 'shoe.jpg', 'ASICS Men', 'Running shoe', 'This versatile shoe is excellent for trail runs, light hiking or exploring a city. ', '2023-02-02 20:38:44', 1, '2023-02-12 16:19:03'),
+(3, 'watch.jpg', 'Smartwatch', 'with Heart Rate, Notifications and Activity Tracking!', 'Color display with customizable watch face; Optical heart rate monitor;Recharge battery with 10-day ', '2023-02-07 20:15:30', 1, '2023-02-12 16:17:25'),
+(12, 'jacket.jfif', 'Jacket For Men', 'WindShitter!', 'This jacket is just wow! New Fashion in the market.', '2023-02-04 12:00:19', 1, '2023-02-04 12:00:19'),
+(16, 'fruits.jpg', 'Fruits Bucket', 'green and fresh', 'This is content about fruits.', '2023-02-12 16:24:23', 1, '2023-02-12 16:29:03');
 
 -- --------------------------------------------------------
 
@@ -59,6 +83,14 @@ CREATE TABLE `tbl_carousel` (
   `content` text NOT NULL,
   `publish` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_carousel`
+--
+
+INSERT INTO `tbl_carousel` (`id`, `filename`, `title`, `content`, `publish`) VALUES
+(5, 'online grocery.jpg', 'Glossaries-Nepal', 'Fresh and clean!', 1),
+(6, 'laptop.jpg', 'Technology', 'Laptop', 1);
 
 -- --------------------------------------------------------
 
@@ -93,6 +125,8 @@ INSERT INTO `tbl_contact` (`id`, `fname`, `lname`, `email`, `mobile`, `message`)
 CREATE TABLE `tbl_customer` (
   `id` int(20) NOT NULL,
   `name` text NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `password` varchar(20) NOT NULL,
   `gender` text NOT NULL,
   `address` varchar(20) NOT NULL,
   `created_date` datetime DEFAULT current_timestamp(),
@@ -104,8 +138,8 @@ CREATE TABLE `tbl_customer` (
 -- Dumping data for table `tbl_customer`
 --
 
-INSERT INTO `tbl_customer` (`id`, `name`, `gender`, `address`, `created_date`, `updated_date`, `publish`) VALUES
-(1, 'customer', 'female', 'boudha', '2023-02-01 12:32:21', '2023-02-01 12:32:21', 1);
+INSERT INTO `tbl_customer` (`id`, `name`, `email`, `password`, `gender`, `address`, `created_date`, `updated_date`, `publish`) VALUES
+(1, 'customer', 'customer@enepal.com', 'customer1', 'female', 'boudha', '2023-02-01 12:32:21', '2023-02-01 12:32:21', 1);
 
 -- --------------------------------------------------------
 
@@ -114,10 +148,10 @@ INSERT INTO `tbl_customer` (`id`, `name`, `gender`, `address`, `created_date`, `
 --
 
 CREATE TABLE `tbl_page` (
-  `image` text NOT NULL,
   `id` int(11) NOT NULL,
+  `filename` varchar(100) NOT NULL,
   `title` varchar(50) NOT NULL,
-  `content` varchar(50) NOT NULL,
+  `content` varchar(100) NOT NULL,
   `publish` tinyint(1) NOT NULL,
   `created_date` datetime DEFAULT current_timestamp(),
   `updated_date` datetime DEFAULT current_timestamp()
@@ -127,10 +161,10 @@ CREATE TABLE `tbl_page` (
 -- Dumping data for table `tbl_page`
 --
 
-INSERT INTO `tbl_page` (`image`, `id`, `title`, `content`, `publish`, `created_date`, `updated_date`) VALUES
-('', 1, 'Food_nepali-ganngnizs', 'Food is basic need of life', 1, '2023-02-01 12:38:19', '2023-02-02 01:55:51'),
-('', 2, 'Glossaries-Nepalhj-k', 'Fresh and Clean glossary items to buy!', 1, '2023-01-28 12:41:33', '2023-02-01 17:06:41'),
-('', 4, 'Fashion-clock', 'Trending clothes!', 1, '2023-02-01 17:19:47', '2023-02-01 17:36:04');
+INSERT INTO `tbl_page` (`id`, `filename`, `title`, `content`, `publish`, `created_date`, `updated_date`) VALUES
+(1, 'fruits.jpg', 'Fruits', 'Clean, Fresh and Healthy. Buy Now!', 1, '2023-02-01 12:38:19', '2023-02-04 13:21:57'),
+(2, 'online grocery.jpg', 'Glossaries', 'Fresh and Clean glossary items to buy!', 1, '2023-01-28 12:41:33', '2023-02-01 17:06:41'),
+(19, 'fashion.jpeg', 'Fashion', 'Change your Looks!', 1, '2023-02-10 02:41:53', '2023-02-12 15:23:27');
 
 -- --------------------------------------------------------
 
@@ -139,11 +173,12 @@ INSERT INTO `tbl_page` (`image`, `id`, `title`, `content`, `publish`, `created_d
 --
 
 CREATE TABLE `tbl_product` (
-  `id` int(20) NOT NULL,
-  `title` text NOT NULL,
-  `content` text NOT NULL,
+  `product_id` int(20) NOT NULL,
+  `product_title` text NOT NULL,
+  `product_description` text NOT NULL,
+  `product_image1` varchar(100) NOT NULL,
   `publish` tinyint(1) NOT NULL,
-  `price` int(11) NOT NULL,
+  `product_price` int(11) NOT NULL,
   `created-date` datetime NOT NULL DEFAULT current_timestamp(),
   `updated-date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -152,9 +187,10 @@ CREATE TABLE `tbl_product` (
 -- Dumping data for table `tbl_product`
 --
 
-INSERT INTO `tbl_product` (`id`, `title`, `content`, `publish`, `price`, `created-date`, `updated-date`) VALUES
-(1, 'Apples', 'Apples are healthy!', 0, 300, '2023-01-28 19:03:36', '2023-01-28 19:03:36'),
-(2, 'Shirt', 'check shirt, woolean shirt', 0, 500, '2023-01-28 19:03:36', '2023-01-28 19:03:36');
+INSERT INTO `tbl_product` (`product_id`, `product_title`, `product_description`, `product_image1`, `publish`, `product_price`, `created-date`, `updated-date`) VALUES
+(5, 'Smart watch', 'Brand', 'watch.jpg', 0, 4000, '2023-02-12 21:15:54', '2023-02-12 21:15:54'),
+(6, 'Laptop', 'Trending Laptop in Nepal(Today).', 'laptop.jpg', 0, 80000, '2023-02-12 21:17:07', '2023-02-12 21:17:07'),
+(8, 'Dairy Milk', 'candy bar', 'dairymilk-silk.jpg', 0, 300, '2023-02-12 21:30:28', '2023-02-12 21:30:28');
 
 -- --------------------------------------------------------
 
@@ -180,6 +216,12 @@ INSERT INTO `tbl_user` (`id`, `name`, `email`, `password`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_article`
@@ -215,7 +257,7 @@ ALTER TABLE `tbl_page`
 -- Indexes for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`product_id`);
 
 --
 -- Indexes for table `tbl_user`
@@ -228,16 +270,22 @@ ALTER TABLE `tbl_user`
 --
 
 --
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
 -- AUTO_INCREMENT for table `tbl_article`
 --
 ALTER TABLE `tbl_article`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tbl_carousel`
 --
 ALTER TABLE `tbl_carousel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_contact`
@@ -255,13 +303,13 @@ ALTER TABLE `tbl_customer`
 -- AUTO_INCREMENT for table `tbl_page`
 --
 ALTER TABLE `tbl_page`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `product_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
