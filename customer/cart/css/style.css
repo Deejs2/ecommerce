@@ -175,7 +175,7 @@ body{
 
 .container .products .box-container{
    display: flex;
-   /* flex-wrap: wrap; */
+   flex-wrap: wrap; 
    gap:15px;
    justify-content: center;
 }
