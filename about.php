@@ -78,11 +78,66 @@ html {
 </head>
 <body>
 
-<div class="about-section">
-  <h1>eNepal</h1>
-  <p>One of the top ecommerce company in Nepal.</p>
-  <p>Resize the browser window to see that this page is responsive by the way.</p>
+<div class="container-xl" style="text-align: center;">
+	<?php
+	// connect to the database
+	
+	$conn = mysqli_connect("localhost", "root", "", "enepal");
+	if(!$conn){
+		die("Connection failed: " . mysqli_connect_error());
+	}
+  
+	// retrieve the content from the database
+	$sql = "SELECT * FROM tbl_about";
+	$result = mysqli_query($conn, $sql);
+
+	// display the content
+	if(mysqli_num_rows($result) > 0){
+		while($row = mysqli_fetch_assoc($result)){
+			echo "<h2>".$row["title"]."</h2>";
+			echo "<p>".$row["content"]."</p>";
+		}
+	} else {
+		echo "No content found.";
+	}
+
+	// close the database connection
+	mysqli_close($conn);
+	?>
 </div>
+</body>
+</html>
+
+<?php
+$sql = "SELECT id, title, sub_title, content, filename, publish FROM tbl_article";
+
+?>
+
+<!-- Three columns of text below the carousel -->
+    <?php
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            ?>
+            
+            <hr class="featurette-divider">
+
+<div class="row featurette">
+  <div class="col-md-7">
+    <h2 class="featurette-heading fw-normal lh-1"><?php echo $row['title'] ?>  <span class="badge text-bg-info">New</span> <span class="text-muted"><?php echo $row['sub_title'] ?></span></h2>
+    <p class="lead"><?php echo $row['content'] ?></p>
+    <p><a class="btn btn-secondary" href="?page=product">View details &raquo;</a></p>
+  </div>
+  <div class="col-md-5">
+ <!--   <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>-->
+      <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="admin/uploaded_img/<?php echo $row['filename'] ?>" alt="Image not uploaded yet!" height="300px">
+
+  </div>
+</div>
+
+<?php
+        }
+    }
+    ?>
 
 <h2 style="text-align:center">Our Team</h2>
 <div class="row">
@@ -99,57 +154,6 @@ html {
     </div>
   </div>
 
-  <div class="column">
-    <div class="card">
-      <img src="admin/uploaded_img/fashion.jpeg" alt="pasanggelbu" style="width:100%">
-      <div class="container">
-        <h2>Pasang Gelbu Sherpa</h2>
-        <p class="title">CEO & Art Director</p>
-        <p>Designed product pages and payment pages!</p>
-        <p>pasanggelbu@example.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <img src="admin/uploaded_img/fashion.jpeg" alt="John" style="width:100%">
-      <div class="container">
-        <h2>Utsab Dahal</h2>
-        <p class="title">Designer</p>
-        <p>Designed About and Contact pages!</p>
-        <p>Dahalutsab@example.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="column">
-    <div class="card">
-      <img src="admin/uploaded_img/fashion.jpeg" alt="John" style="width:100%">
-      <div class="container">
-        <h2>Apson Jirel</h2>
-        <p class="title">Designer & content writer</p>
-        <p>Designer and content writer!</p>
-        <p>apsonjirel@example.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="column">
-    <div class="card">
-      <img src="admin/uploaded_img/fashion.jpeg" alt="John" style="width:100%">
-      <div class="container">
-        <h2>Chitra Prasad Archery</h2>
-        <p class="title">Designer</p>
-        <p>Designed and create login and register page!</p>
-        <p>chitraprasad2@example.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
 </div>
 
 </body>
