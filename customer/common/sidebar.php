@@ -31,15 +31,16 @@
       </li>
     </ul>
     <hr>
+
     <div class="dropdown">
       <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+      <img src='profile-pic/' alt='Jane' width='32' height='32' class='rounded-circle me-2'>
+        
         <strong><?php echo $_SESSION['email']; ?></strong>
       </a>
       <ul class="dropdown-menu text-small shadow">
-        <li><a class="dropdown-item" href="#">New project...</a></li>
         <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><a class="dropdown-item" href="?page=profile">Profile</a></li>
         <li><hr class="dropdown-divider"></li>
         <li><a class="dropdown-item" href="?page=logout" onclick="return confirm('are your sure you want to logout?');">Sign out</a></li>
       </ul>

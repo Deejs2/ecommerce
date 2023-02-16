@@ -18,6 +18,7 @@ if(!isset($_SESSION['email'])){
        <!-- custom css file link  -->
    <link rel="stylesheet" href="cart/css/style.css">
    <link rel="stylesheet" href="../css/product.css">
+   <link href="../css/checkout.css" rel="stylesheet">
 
     <style> 
 .col-md-9 {
@@ -59,12 +60,17 @@ if(!isset($_SESSION['email'])){
                               include('cart/product.php');
                           }elseif ($action == 'buy'){
                               include('cart/checkout.php');
-                          }elseif ($action == 'order'){
+                          }elseif ($action == 'delivery'){
+                            include('cart/delivery.php');
+                        }elseif ($action == 'order'){
                             include('cart/order.php');
                         }else{
                               include('index.php');
                           }
                           break;
+                          case 'profile':
+                            include("profile.php");
+                            break;
                     case 'logout':
                         include("logout.php");
                         break;

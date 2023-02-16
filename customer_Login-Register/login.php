@@ -24,6 +24,7 @@ if (isset($_POST['login'])) {
             $row = mysqli_fetch_array($result);
             $email = $row['email'];
             $password = $row['password'];
+            $_SESSION['user_id'] = $row['id'];
 
 
             if ($email == $email && $password == $password) {

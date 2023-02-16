@@ -1,5 +1,5 @@
 <?php
-$sql = "SELECT id, name, email, password, gender, address, created_date, updated_date, publish FROM tbl_customer";
+$sql = "SELECT id, name, email, password, gender, address FROM tbl_customer";
 $result = $conn->query($sql);
 ?>
 
@@ -14,13 +14,10 @@ $result = $conn->query($sql);
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Gender</th>
                 <th>Email</th>
                 <th>Password</th>
+                <th>Gender</th>
                 <th>Address</th>
-                <th>Created_Date</th>
-                <th>Updated_Date</th>
-                <th>Publish</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -36,9 +33,6 @@ $result = $conn->query($sql);
                     <td><?php echo $row['password'] ?></td>
                     <td><?php echo $row['gender'] ?></td>
                     <td><?php echo $row['address'] ?></td>
-                    <td><?php echo $row['created_date'] ?></td>
-                    <td><?php echo $row['updated_date'] ?></td>
-                    <td><?php echo $row['publish'] ? 'YES': 'NO' ?></td>
                     <td>
                         <a href="?page=customer_pages&action=delete&id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure?')">Delete</a>
                     </td>

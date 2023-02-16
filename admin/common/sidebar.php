@@ -8,12 +8,6 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="?page=order">
-              <span data-feather="file" class="align-text-bottom"></span>
-              Orders
-            </a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="?page=product">
               <span data-feather="shopping-cart" class="align-text-bottom"></span>
               Products
@@ -23,6 +17,18 @@
             <a class="nav-link" href="?page=customer_pages&action=list">
               <span data-feather="users" class="align-text-bottom"></span>
               Customers
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="?page=about">
+              <span data-feather="users" class="align-text-bottom"></span>
+              About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="?page=contact">
+              <span data-feather="users" class="align-text-bottom"></span>
+              Customer Message
             </a>
           </li>
         </ul>

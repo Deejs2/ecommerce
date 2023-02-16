@@ -1,11 +1,5 @@
 <main>
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-            <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
   margin: 0;
@@ -75,91 +69,61 @@ html {
   }
 }
 </style>
-</head>
-<body>
 
-<div class="container-xl" style="text-align: center;">
-	<?php
-	// connect to the database
-	
-	$conn = mysqli_connect("localhost", "root", "", "enepal");
-	if(!$conn){
-		die("Connection failed: " . mysqli_connect_error());
-	}
-  
-	// retrieve the content from the database
-	$sql = "SELECT * FROM tbl_about";
-	$result = mysqli_query($conn, $sql);
+<div style="text-align: center;">
 
-	// display the content
-	if(mysqli_num_rows($result) > 0){
-		while($row = mysqli_fetch_assoc($result)){
-			echo "<h2>".$row["title"]."</h2>";
-			echo "<p>".$row["content"]."</p>";
-		}
-	} else {
-		echo "No content found.";
-	}
-
-	// close the database connection
-	mysqli_close($conn);
-	?>
-</div>
-</body>
-</html>
-
-<?php
-$sql = "SELECT id, title, sub_title, content, filename, publish FROM tbl_article";
-
-?>
 
 <!-- Three columns of text below the carousel -->
     <?php
-    if ($result->num_rows > 0) {
+
+    	// retrieve the content from the database
+	$sql = "SELECT title, content FROM tbl_about";
+	$result = mysqli_query($conn, $sql);
+
+  $row = $result->fetch_assoc();
+
+          echo "<div class='about-section'><h2>".$row["title"]."</h2>";
+			echo "<p>".$row["content"]."</p></div>";
+            ?>
+
+<h2 style="text-align:center">Our Team</h2>
+<?php
+// retrieve the content from the database
+      $sql = "SELECT id, filename, adminName, email, post, work FROM tbl_about";
+      $result = mysqli_query($conn, $sql); ?>
+
+<div class="row">
+  <div class="column">
+
+  <?php 
+
+if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             ?>
-            
-            <hr class="featurette-divider">
 
-<div class="row featurette">
-  <div class="col-md-7">
-    <h2 class="featurette-heading fw-normal lh-1"><?php echo $row['title'] ?>  <span class="badge text-bg-info">New</span> <span class="text-muted"><?php echo $row['sub_title'] ?></span></h2>
-    <p class="lead"><?php echo $row['content'] ?></p>
-    <p><a class="btn btn-secondary" href="?page=product">View details &raquo;</a></p>
-  </div>
-  <div class="col-md-5">
- <!--   <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>-->
-      <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="admin/uploaded_img/<?php echo $row['filename'] ?>" alt="Image not uploaded yet!" height="300px">
 
-  </div>
+<div class="card">
+      <img src="admin/about/img/<?php echo $row['filename'] ?>" alt="Jane" style="width:100%">
+      <div class="container">
+        <h2><?php echo $row['adminName'] ?></h2>
+        <p class="title"><?php echo $row['post'] ?></p>
+        <p><?php echo $row['work'] ?></p>
+        <p><?php echo $row['email'] ?></p>
+        <p><button class="button">Contact</button></p>
+      </div>
 </div>
+            
 
 <?php
         }
     }
     ?>
-
-<h2 style="text-align:center">Our Team</h2>
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <img src="admin/uploaded_img/fashion.jpeg" alt="Jane" style="width:100%">
-      <div class="container">
-        <h2>Dhiraj Jirel</h2>
-        <p class="title">Founder & Project Manager</p>
-        <p>Maintain and designed Admin panel!</p>
-        <p>dhirajjirel@example.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
+        
   </div>
-
 </div>
 
-</body>
-</html>
 
-            </div>
-        </div>
+
+
     </div>
 </main>

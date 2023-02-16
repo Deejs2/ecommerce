@@ -1,124 +1,137 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>About Us</title>
-</head>
-<body>
+<style>
+	td, th, table{
+		border: 1px solid black;
+	}
+</style>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">About Page</h1>
+</div>
+
+<?php
+	$sql = "SELECT title, content FROM tbl_about";
+	$result = $conn->query($sql);
+	$row = $result->fetch_assoc();
+?>
+	<div style="text-align: center;">
+		<h1><?php echo $row['title'] ?></h1>
+		<p><?php echo $row['content'] ?></p>
+	</div>
+
+<div class="row">
+	
+    <div class="col-12">
+            <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Admin Name</th>
+				<th>Email</th>
+                <th>Post</th>
+                <th>Work</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+		<?php
+			$sql = "SELECT id, filename, adminName, email, post, work FROM tbl_about";
+			$result = $conn->query($sql);
+		?>
+            <?php
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+            ?>
+                <tr>
+                    <td><?php echo $row['id'] ?></td>
+                    <td><img src="about/img/<?php echo $row['filename'] ?>" height="100" alt=""></td>
+                    <td><?php echo $row['adminName'] ?></td>
+					<td><?php echo $row['email'] ?></td>
+                    <td><?php echo $row['post'] ?></td>
+					<td><?php echo $row['work'] ?></td>
+                    <td>
+                        <a href="?page=article&action=edit&id=<?php echo $row['id'] ?>">Edit</a>
+                        <a href="?page=article&action=delete&id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure?')">Delete</a>
+                    </td>
+                    
+                </tr>
+            <?php
+                }
+            }
+            ?>
+        </tbody>
+      </table>
+    </div>
 
 	<?php
-	// connect to the database
-	
-	$conn = mysqli_connect("localhost", "root", "", "enepal");
-	if(!$conn){
-		die("Connection failed: " . mysqli_connect_error());
-	}
 
-	// check if the form was submitted
-	if(isset($_POST['submit'])){
+if(isset($_POST['submit'])) {
+    $adminName = $_POST['adminName'];
+	$email = $_POST['email'];
+    $post = $_POST['post'];
+    $work = $_POST['work'];
+    
+        //file upload 
+    $filename = $_FILES["uploadfile"]["name"];
+    $tempname = $_FILES["uploadfile"]["tmp_name"];
+    $folder = "about/img/" . $filename;
+ 
+    // Now let's move the uploaded image into the folder: image
+    if (move_uploaded_file($tempname, $folder)) {
+        echo "<h3>  Image uploaded successfully!</h3>";
+    } else {
+        echo "<h3>  Failed to upload image!</h3>";
+    }
 
-		// get the form data
-		$title = $_POST['title'];
-		$content = mysqli_real_escape_string($conn, $_POST['content']);
+    $insertQuery = "INSERT INTO tbl_about (filename, adminName, email, post, work) 
+    VALUES ('$filename','$adminName','$email','$post', '$work')";
+    $result = $conn->query($insertQuery);
 
-		// check if the record already exists
-		$sql = "SELECT * FROM tbl_about WHERE title = '$title'";
-		$result = mysqli_query($conn, $sql);
+    if($conn->insert_id){
+        echo "Page created successfully";
+    }else{
+        echo $conn->error;
+    }
 
-		if(mysqli_num_rows($result) > 0){
 
-			// if the record exists, update the content
-			$row = mysqli_fetch_assoc($result);
-			$id = $row['id'];
-			$sql = "UPDATE tbl_about SET content = '$content' WHERE id = $id";
-			if(mysqli_query($conn, $sql)){
-				echo "Content updated successfully.";
-			} else {
-				echo "Error updating content: " . mysqli_error($conn);
-			}
 
-		} else {
+    // Redirect to page list
+    echo '<script>
+window.location = "?page=about";
+</script>';
+}
+?>
 
-			// if the record doesn't exist, insert the new content
-			$sql = "INSERT INTO tbl_about (title, content) VALUES ('$title', '$content')";
-			if(mysqli_query($conn, $sql)){
-				echo "Content added successfully.";
-			} else {
-				echo "Error adding content: " . mysqli_error($conn);
-			}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Add Team Member</h1>
+</div>
 
-		}
+<form method="post" action="" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Admin Name</label>
+        <input type="text" name="adminName" class="form-control" required />
+    </div>
 
-	}
+	<div class="form-group">
+        <input class="form-control" type="file" name="uploadfile" value="" />
+    </div>
 
-	// check if a record should be deleted
-	if(isset($_GET['delete'])){
+	<div class="form-group">
+        <label>Email</label>
+        <input type="text" name="email" class="form-control" required />
+    </div>
 
-		$id = $_GET['delete'];
-		$sql = "DELETE FROM tbl_about WHERE id = $id";
-		if(mysqli_query($conn, $sql)){
-			echo "Content deleted successfully.";
-		} else {
-			echo "Error deleting content: " . mysqli_error($conn);
-		}
+	<div class="form-group">
+        <label>Post</label>
+        <input type="text" name="post" class="form-control" required />
+    </div>
 
-	}
+	<div class="form-group">
+        <label>Work</label>
+        <input type="text" name="work" class="form-control" required />
+    </div>
 
-	// retrieve the content from the database
-	$sql = "SELECT * FROM tbl_about";
-	$result = mysqli_query($conn, $sql);
 
-	// display the content
-	if(mysqli_num_rows($result) > 0){
-		while($row = mysqli_fetch_assoc($result)){
-
-			// display the content
-			echo "<h2>".$row["title"]."</h2>";
-			echo "<p>".$row["content"]."</p>";
-
-			// display a form for editing or deleting the content
-			echo "<form method='post'>";
-			echo "<input type='hidden' name='title' value='".$row["title"]."'>";
-			echo "<textarea name='content'>".$row["content"]."</textarea>";
-			echo "<br>";
-			echo "<button type='submit' name='submit'>Save</button>";
-			echo "<a href='about.php?delete=".$row["id"]."'>Delete</a>";
-			echo "</form>";
-
-			echo "<hr>";
-
-		}
-	}
-
-	// display a form for adding new content
-	echo "<h2>Add New Content</h2>";
-	echo "<form method='post'>";
-	echo "<label>Title:</label><br>";
-	echo "<input type='text' name='title'><br>";
-	echo "<label>Content:</label><br>";
-	echo "<textarea name='content'></textarea><br>";
-	echo "<button type='submit' name='submit'>Add Content</button>";
-	echo "</form>";
-	
-	// check if a new record should be added
-	if(isset($_POST['submit'])){
-
-		// get the form data
-		$title = $_POST['title'];
-		$content = $_POST['content'];
-
-		// check if the record already exists
-		$sql = "SELECT * FROM tbl_about WHERE title = '$title'";
-		$result = mysqli_query($conn, $sql);
-
-		if(mysqli_num_rows($result) > 0){
-			echo "Error adding content: Record already exists.";
-		} else {
-			// if the record doesn't exist, insert the new content
-			$sql = "INSERT INTO tbl_about (title, content) VALUES ('$title', '$content')";
-			if(mysqli_query($conn, $sql)){
-				echo "Content added successfully.";
-			} else {
-				echo "Error adding content: " . mysqli_error($conn);
-			}
-		}
-	}
+    <div class="form-group">
+        <input type="submit" name="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>

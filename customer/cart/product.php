@@ -2,7 +2,10 @@
 $user_id = $_SESSION['user_id'];
 
 if(!isset($user_id)){
-   header('location:../?page=customer-login');
+   // header('location:../?page=login-customer');
+   echo '<script>
+window.location = "../?page=login-customer";
+</script>';
 };
 
 
