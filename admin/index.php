@@ -14,7 +14,7 @@ include('../db/db.php');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="author" content="eNepal contributors">
     <meta name="generator" content="Hugo 0.108.0">
     <title>eNepal_Admin Panel</title>
 
@@ -115,8 +115,8 @@ include('../db/db.php');
               case 'customer_pages':
                 if($action == 'list'){
                   include('customer_list/list.php');
-                }elseif ($action == 'create'){
-                    include('customer_list/create.php');
+                }elseif ($action == 'edit'){
+                    include('customer_list/edit.php');
                 }elseif ($action == 'delete'){
                     include('customer_list/delete.php');
                 }else{

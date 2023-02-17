@@ -93,14 +93,14 @@ html {
       $result = mysqli_query($conn, $sql); ?>
 
 <div class="row">
-  <div class="column">
 
-  <?php 
+    <?php 
 
 if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             ?>
 
+  <div class="column">
 
 <div class="card">
       <img src="admin/about/img/<?php echo $row['filename'] ?>" alt="Jane" style="width:100%">
@@ -114,12 +114,14 @@ if ($result->num_rows > 0) {
 </div>
             
 
+        
+  </div>
+
+  
 <?php
         }
     }
     ?>
-        
-  </div>
 </div>
 
 

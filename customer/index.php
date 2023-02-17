@@ -71,6 +71,9 @@ if(!isset($_SESSION['email'])){
                           case 'profile':
                             include("profile.php");
                             break;
+                            case 'setting':
+                              include("setting.php");
+                              break;
                     case 'logout':
                         include("logout.php");
                         break;

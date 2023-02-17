@@ -14,7 +14,7 @@ html {
 
 .column {
   float: left;
-  width: 33.3%;
+  width: 45%;
   margin-bottom: 16px;
   padding: 0 8px;
 }
@@ -68,6 +68,14 @@ html {
   }
 }
 </style>
+
+<?php
+                // retrieve the content from the database
+                      $sql = "SELECT `id`, `name`, `filename`, `gender`, `address`, `work`, `bio` FROM `tbl_customer` WHERE 1";
+                      $result = $conn->query($sql);
+
+                      $row = $result->fetch_assoc();
+                      ?>
     
 <div class="about-section cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
@@ -78,13 +86,6 @@ html {
 <div class="row" style="justify-content: center;">
     <div class="column">
         <div class="card" style="color: #000;">
-            <?php
-                // retrieve the content from the database
-                      $sql = "SELECT `id`, `name`, `filename`, `gender`, `address`, `work`, `bio` FROM `tbl_customer` WHERE 1";
-                      $result = $conn->query($sql);
-
-                      $row = $result->fetch_assoc();
-                      ?>
 
                         
             <img src="profile-pic/<?php echo $row['filename']; ?>" alt="Jane" style="width:100%">
@@ -92,9 +93,9 @@ html {
                 <h2><?php echo $row['name']; ?></h2>
                 <p><?php echo $row['gender']; ?></p>
                 <p><?php echo $row['address']; ?></p>
-                <p class="title"><?php echo $row['address']; ?><?php echo $row['work']; ?></p>
+                <p class="title"><?php echo $row['work']; ?></p>
                 
-                <p><?php echo $row['address']; ?><?php echo $row['bio']; ?></p>
+                <p><?php echo $row['bio']; ?></p>
         </div>
         
      </div>
@@ -103,7 +104,7 @@ html {
   </div>
 
   <footer class="mt-auto text-white-50">
-    <p><button class='button' style="width: 20%;" type='submit' name='submit'>Edit</button></p>
+    <p><button class='button' style="width: 20%;" type='submit' name='submit'><a href="?page=setting&id=<?php echo $row['id'] ?>">Edit Profile</a></button></p>
   </footer>
 </div>
 
