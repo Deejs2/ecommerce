@@ -1,3 +1,9 @@
+<style>
+  .carousel-caption{
+    left: 8% !important;
+  }
+</style>
+
 <?php
 $sql = "SELECT id, title, content, filename, publish FROM tbl_carousel";
 $result = $conn->query($sql);
@@ -32,12 +38,12 @@ $result = $conn->query($sql);
     <div class="carousel-inner">
 
     <div class="carousel-item active">
-        <img src="img/grocery1.jpg">
-        <div class="container">
+        <img src="admin/carousel/img/banner.jpg">
+        <div class="container-fluid">
           <div class="carousel-caption text-start">
-            <h1>Example headline.</h1>
-            <p>Some representative placeholder content for the first slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+            <h1 style="color: black;">Top Shopping Website</h1>
+            <p style="color: black;">Let's be our customer!</p>
+            <p><a class="btn btn-lg btn-primary" href="?page=login-customer">Login for customer</a></p>
           </div>
         </div>
       </div>
@@ -51,8 +57,8 @@ $result = $conn->query($sql);
       <img src="admin/carousel/img/<?php echo $row['filename'] ?>" alt="Image not uploaded yet!">
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1><?php echo $row['title'] ?></h1>
-            <p><?php echo $row['content'] ?></p>
+            <h1 style="color: black;"><?php echo $row['title'] ?></h1>
+            <p style="color: green;"><?php echo $row['content'] ?></p>
             <p><a class="btn btn-lg btn-primary" href="?page=register-customer">Sign up today</a></p>
           </div>
         </div>

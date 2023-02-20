@@ -1,4 +1,5 @@
 <link href="css/product.css" rel="stylesheet">
+<div style="padding: 3px 50px;">
 <!-- 
     <nav class="site-header sticky-top py-1">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
@@ -22,18 +23,15 @@
   <p class="text-center">eNEPAL provide quality goods as well as on-time delivery of the product.</p>
 </div>
 
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-      <div class="col-md-5 p-lg-5 mx-auto my-5">
-        <h1 class="display-4 font-weight-normal">Punny headline</h1>
-        <p class="lead font-weight-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple's marketing pages.</p>
+    
+    <div class="position-relative overflow-hidden p-3 text-center container" style="background: url(admin/carousel/img/banner.jpg); background-size: cover; height: 650px; margin-bottom: 60px;">
+
+        <h1 class="display-4 font-weight-normal">New Product</h1>
+        <p class="lead font-weight-normal" style="padding: 8px 160px 0px; margin-bottom: 10px;">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple's marketing pages.</p>
         <a class="btn btn-outline-secondary" href="#">Coming soon</a>
-      </div>
-      
-      <div class="product-device box-shadow d-none d-md-block"></div>
-      <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+ 
     </div>
     
-
     
 
 <!-----fourth child----->
@@ -57,8 +55,10 @@ while($row=mysqli_fetch_assoc($result_query)){
   <div class='card-body'>
     <h5 class='card-title'>$product_title</h5>
     <p class='card-text'>$product_description</p>
+    <p class='card-text'>Price: $$product_price</p>
+    
     <a href='?page=login-customer' class='btn btn-info'>Add to cart</a>
-    <a href='#' class='btn btn-secondary'>View more</a>
+
   </div>
 </div>
 </div>";
@@ -71,6 +71,7 @@ while($row=mysqli_fetch_assoc($result_query)){
   </div>
 </div>
 
+</div>
 
 
     

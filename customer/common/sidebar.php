@@ -33,17 +33,19 @@
     <hr>
 
     <?php
+$email = $_SESSION['email'];
                 // retrieve the content from the database
-                      $sql = "SELECT `filename`,name FROM `tbl_customer`";
+                      $sql = "SELECT `name`, `filename` FROM `tbl_customer` WHERE email = '$email'";
                       $result = $conn->query($sql);
 
                       $row = $result->fetch_assoc();
                       ?>
+    
     <div class="dropdown">
       <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="profile-pic/<?php echo $row['filename'];?>" alt="Jane" width="32" height="32" class="rounded-circle me-2">
         
-        <strong><?php echo $_SESSION['email'];?></strong><br>
+        <strong><?php echo $row['name'];?></strong><br>
 
       </a>
       <ul class="dropdown-menu text-small shadow">

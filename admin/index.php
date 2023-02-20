@@ -95,7 +95,7 @@ include('../db/db.php');
         <?php
             // Dynamic page load
             $page = $_GET['page'];
-            $action = $_GET['action'];
+            $action = isset($_GET['action']) ? $_GET['action'] : '';
 
             switch ($page){
               case 'carousel':

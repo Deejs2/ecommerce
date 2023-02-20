@@ -6,9 +6,10 @@
 <div class="bd-example-snippet bd-code-snippet">
         <div class="alert alert-success" role="alert">
           <h4 class="alert-heading">Well done!</h4>
-          <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+          <p>Aww yeah, you have successfully login as our customer!</p>
+            <p>We are very happy to serve you <?php echo $_SESSION['email'];?></p>
           <hr>
-          <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy. <a href="?page=home" class="alert-link">Trending Products!</a></p>
+          <p class="mb-0">Enjoy and have fun online shopping! ,</p><p class="alert alert-danger" role="alert"> Be sure not to miss our trending products. <a href="?page=home" class="alert-link">Click Me!</a></p>
         </div>
         </div>
 </div>

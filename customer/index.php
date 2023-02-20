@@ -43,7 +43,7 @@ if(!isset($_SESSION['email'])){
         <?php
             // Dynamic page load
             $page = $_GET['page'];
-            $action = $_GET['action'];
+            $action = isset($_GET['action']) ? $_GET['action'] : '';
 
             switch ($page){
                 case 'dashboard':
@@ -60,14 +60,21 @@ if(!isset($_SESSION['email'])){
                               include('cart/product.php');
                           }elseif ($action == 'buy'){
                               include('cart/checkout.php');
-                          }elseif ($action == 'delivery'){
-                            include('cart/delivery.php');
+                          
                         }elseif ($action == 'order'){
                             include('cart/order.php');
                         }else{
                               include('index.php');
                           }
                           break;
+                          case 'delivery':
+                              if ($action == 'edit'){
+                                  include('cart/checkout/edit.php');
+                              }else{
+                                include("delivery.php");
+                              }
+
+                            break;
                           case 'profile':
                             include("profile.php");
                             break;

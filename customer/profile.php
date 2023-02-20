@@ -70,8 +70,9 @@ html {
 </style>
 
 <?php
+$email = $_SESSION['email'];
                 // retrieve the content from the database
-                      $sql = "SELECT `id`, `name`, `filename`, `gender`, `address`, `work`, `bio` FROM `tbl_customer` WHERE 1";
+                      $sql = "SELECT `id`, `name`, `filename`, `gender`, `address`, `work`, `bio` FROM `tbl_customer` WHERE email = '$email'";
                       $result = $conn->query($sql);
 
                       $row = $result->fetch_assoc();
@@ -92,10 +93,10 @@ html {
             <div class="container">
                 <h2><?php echo $row['name']; ?></h2>
                 <p><?php echo $row['gender']; ?></p>
-                <p><?php echo $row['address']; ?></p>
-                <p class="title"><?php echo $row['work']; ?></p>
+                <p>Address: <?php echo $row['address']; ?></p>
+                <p class="title">Work: <?php echo $row['work']; ?></p>
                 
-                <p><?php echo $row['bio']; ?></p>
+                <p>Bio: <?php echo $row['bio']; ?></p>
         </div>
         
      </div>
