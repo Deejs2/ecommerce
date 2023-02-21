@@ -85,11 +85,11 @@ html {
           echo "<div class='about-section'><h2>".$row["title"]."</h2>";
 			echo "<p>".$row["content"]."</p></div>";
             ?>
-
 <h2 style="text-align:center">Our Team</h2>
 <?php
+
 // retrieve the content from the database
-      $sql = "SELECT id, filename, adminName, email, post, work FROM tbl_about";
+      $sql = "SELECT id, filename, adminName, email, post, work FROM tbl_about ORDER BY id DESC";
       $result = mysqli_query($conn, $sql); ?>
 
 <div class="row">

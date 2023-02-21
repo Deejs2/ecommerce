@@ -16,6 +16,22 @@ $product_price=$row['product_price'];
         $product_image1=$_POST['product_image1'];
         $product_price=$_POST['product_price'];
 
+        //accessing images
+$product_image1=$_FILES['product_image1']['name'];
+
+
+//accessing image tmp name
+$temp_image1=$_FILES['product_image1']['tmp_name'];
+
+
+//checking empty condition
+if($product_title=='' or $product_description=='' or $product_price=='' or $product_image1=='' ){
+  echo"<script>alert('Please fill all the available fields')</script>";
+  exit();
+}else{
+  move_uploaded_file($temp_image1,"./product_images/$product_image1");
+}
+
         $sql="update `tbl_product` set product_id=$product_id,product_title='$product_title',
         product_description='$product_description',product_image1='$product_image1',product_price='$product_price'
         where product_id=$product_id";

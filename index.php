@@ -2,7 +2,7 @@
 include('db/db.php');
 include('common/header.php'); 
 
-$page = $_GET['page'];
+$page = isset($_GET['page']) ? $_GET['page'] : '';
 
 switch ($page){
     case 'home':

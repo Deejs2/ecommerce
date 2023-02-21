@@ -86,11 +86,18 @@ if(isset($_POST['submit'])) {
     VALUES ('$filename','$adminName','$email','$post', '$work')";
     $result = $conn->query($insertQuery);
 
-    if($conn->insert_id){
-        echo "Page created successfully";
-    }else{
-        echo $conn->error;
-    }
+    if ($conn->query($sql) === TRUE) {
+        $last_id = $conn->insert_id;
+        echo "New record created successfully. Last inserted ID is: " . $last_id;
+      } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+      }
+
+    // if($conn->insert_id){
+    //     echo "Page created successfully";
+    // }else{
+    //     echo $conn->error;
+    // }
 
 
 

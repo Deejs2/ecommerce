@@ -49,7 +49,7 @@ $email = $_SESSION['email'];
 
   <main>
     <div class="py-5 text-center">
-      <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+      <img class="d-block mx-auto mb-4" src="../img/enepal-logo.jpg" alt="" width="120" height="100">
       <h2>Checkout form</h2>
       <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
     </div>
@@ -68,69 +68,16 @@ $email = $_SESSION['email'];
           </tbody>
         </table>
 
-        <?php
-        $user_id = $_SESSION['user_id'];
-         $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
-         $grand_total = 0;
-         $discount = 0;
-         if(mysqli_num_rows($cart_query) > 0){
-            while($fetch_cart = mysqli_fetch_assoc($cart_query)){
-      ?>
+        <?php include('checkout/checkout-cart.php');?>
 
-      <?php
-      $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']);
-         $grand_total += $sub_total;
-         $discount= $grand_total-5;
-            }
-         }else{
-            echo '<tr><td style="padding:20px; text-transform:capitalize;" colspan="6">no item added</td></tr>';
-         }
-      ?>
 
-          <span class="text-primary">Your cart</span>
-          <span class="badge bg-primary rounded-pill"><?php echo $fetch_cart['quantity']; ?></span>
-        </h4>
-        <ul class="list-group mb-3">
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0"><?php echo $fetch_cart['name']; ?></h6>
-              <small class="text-muted"><?php echo $fetch_cart['quantity']; ?></small>
-            </div>
-            <span class="text-muted">$<?php echo $fetch_cart['price']; ?>/-</span>
-          </li>
-          <!-- <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Second product</h6>
-              <small class="text-muted">Brief description</small>
-            </div>
-            <span class="text-muted">$8</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Third item</h6>
-              <small class="text-muted">Brief description</small>
-            </div>
-            <span class="text-muted">$5</span>
-          </li> -->
-          <li class="list-group-item d-flex justify-content-between bg-light">
-            <div class="text-success">
-              <h6 class="my-0">Promo code used</h6>
-              <small>eNepal</small>
-            </div>
-            <span class="text-success">−$5</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between">
-            <span>Grand Total : $<?php echo $grand_total; ?>/-</span>
-            <strong>To Pay: $<?php echo $discount; ?>/-</strong>
-          </li>
-        </ul>
 
-        <form class="card p-2" method="post">
+        <!-- <form class="card p-2" method="post">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Promo code">
             <button type="submit" class="btn btn-secondary">Redeem</button>
           </div>
-        </form>
+        </form> -->
       </div> 
       <div class="col-md-7 col-lg-8">
         <h4 class="mb-3">Billing address</h4>
