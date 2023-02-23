@@ -47,7 +47,7 @@
             </div>
 
           </form><br>
-          <p style="text-align: center;">I don't have any account <a href="?page=register-customer" class="text-warning" style="font-weight:600;color-red: blue;text-decoration:none;">Register Here</a></p>
+          <p style="text-align: center;">I don't have any account <a href="?page=register-customer" class="text-warning" style="font-weight:600;color:blue;text-decoration:none;">Register Here</a></p>
         </div>
       </div>
     </div>

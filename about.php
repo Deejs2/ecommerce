@@ -104,12 +104,12 @@ if ($result->num_rows > 0) {
 
 <div class="card">
       <img src="admin/about/img/<?php echo $row['filename'] ?>" alt="Jane" style="width:100%">
-      <div class="container">
+      <div class="container" style="text-align: left;">
         <h2><?php echo $row['adminName'] ?></h2>
         <p class="title"><?php echo $row['post'] ?></p>
         <p><?php echo $row['work'] ?></p>
         <p><?php echo $row['email'] ?></p>
-        <p><button class="button">Contact</button></p>
+        <p><button class="button"><a href="?page=contact" style="text-decoration: none; color:white;">Contact</a></button></p>
       </div>
 </div>
             

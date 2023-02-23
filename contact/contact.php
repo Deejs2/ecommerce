@@ -1,7 +1,8 @@
 <link rel="stylesheet" type="text/css" href="contact/style.css">
 <body>
 	<div class="container">
-		<h1>Contact Form</h1>
+		<h1>Contact Us</h1>
+        <p style="text-align: center;">Swing by for a cup of coffee, or leave us a message:</p>
 		<form action="" method="post">
 			<input type="text" name="name" placeholder="Name" required>
 			<input type="text" name="phone" placeholder="Phone" required>
