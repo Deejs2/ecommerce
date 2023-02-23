@@ -43,7 +43,18 @@
                       <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example4c"><i class="bi bi-chat-left-dots-fill"></i> Gender</label>
-                        <input type="text" class="form-control form-control-lg py-3" name="gender" autocomplete="off" placeholder="male/female/other" style="border-radius:25px ;" />
+                        <div class="form-check">
+                          <input name="gender" value="Male" type="radio" class="form-check-input" checked required>
+                          <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check">
+                          <input name="gender" value="Female" type="radio" class="form-check-input" required>
+                          <label class="form-check-label" for="female">Female</label>
+                        </div>
+                        <div class="form-check">
+                          <input name="gender" value="Other" type="radio" class="form-check-input" required>
+                          <label class="form-check-label" for="other">Other</label>
+                        </div>
                       </div>
                     </div>
 
@@ -60,14 +71,6 @@
                       <div class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example4c"><i class="bi bi-chat-left-dots-fill"></i> Profile Picture</label>
                         <input type="file" name="uploadfile" class="form-control form-control-lg py-3" autocomplete="off" placeholder="Choose your Profile picture" style="border-radius:25px ;" />
-                      </div>
-                    </div>
-
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example4c"><i class="bi bi-chat-left-dots-fill"></i> Bio</label>
-                        <input type="text" class="form-control form-control-lg py-3" name="bio" autocomplete="off" placeholder="Enter bio" style="border-radius:25px ;" />
                       </div>
                     </div>
 

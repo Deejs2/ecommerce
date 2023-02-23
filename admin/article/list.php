@@ -38,8 +38,8 @@ $result = $conn->query($sql);
                     <td><?php echo $row['updated_date'] ?></td>
                     <td><?php echo $row['publish'] ? 'YES': 'NO' ?></td>
                     <td>
-                        <a href="?page=article&action=edit&id=<?php echo $row['id'] ?>">Edit</a>
-                        <a href="?page=article&action=delete&id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure?')">Delete</a>
+                        <a href="?page=article&action=edit&id=<?php echo $row['id'] ?>"><span data-feather="edit" class="align-text-bottom"></span>Edit</a>
+                        <a href="?page=article&action=delete&id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure?')"><span data-feather="trash-2" class="align-text-bottom"></span>Delete</a>
                     </td>
                     
                 </tr>
@@ -48,6 +48,6 @@ $result = $conn->query($sql);
             }
             ?>
         </tbody>
-        <button class="btn btn-outline-secondary" type="button"><a href="?page=article&action=create">Create</a></button>
+        <button class="btn btn-outline-secondary" type="button"><a href="?page=article&action=create"><span data-feather="file-plus" class="align-text-bottom"></span>Create</a></button>
     </table>
     </div>

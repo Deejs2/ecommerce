@@ -120,7 +120,7 @@ $email = $_SESSION['email'];
 
             <div class="col-12">
               <label for="address" class="form-label">Delivery Address</label>
-              <input type="text" class="form-control" name="delivery_address" placeholder="" value="<?php echo $row['address'];?>" required>
+              <input type="text" class="form-control" name="delivery_address" placeholder="" value="" required>
               <div class="invalid-feedback">
                 Please enter your shipping address.
               </div>
@@ -128,7 +128,7 @@ $email = $_SESSION['email'];
 
             <div class="col-12">
               <label for="address2" class="form-label">Permanent Address<span class="text-muted">(Optional)*</span></label>
-              <input type="text" class="form-control" name="permanent_address" placeholder="hometown">
+              <input type="text" class="form-control" name="permanent_address" placeholder="hometown" value="<?php echo $row['address'];?>">
             </div>
 
           </div>
@@ -172,7 +172,7 @@ $email = $_SESSION['email'];
 
             <div class="col-md-3">
               <label for="cc-expiration" class="form-label">Expiration</label>
-              <input type="text" class="form-control" name="expiration_date" id="cc-expiration" placeholder="dd-mm-yyyy" required>
+              <input type="date" class="form-control" name="expiration_date" id="cc-expiration" placeholder="" required>
               <div class="invalid-feedback">
                 Expiration date required
               </div>
@@ -180,7 +180,7 @@ $email = $_SESSION['email'];
 
             <div class="col-md-3">
               <label for="cc-cvv" class="form-label">CVV</label>
-              <input type="text" name="security_code" class="form-control" id="cc-cvv" placeholder="Security code" required>
+              <input type="password" name="security_code" class="form-control" id="cc-cvv" placeholder="Security code" required>
               <div class="invalid-feedback">
                 Security code required
               </div>

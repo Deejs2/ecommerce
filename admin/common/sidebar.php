@@ -21,14 +21,20 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="?page=about">
-              <span data-feather="users" class="align-text-bottom"></span>
+              <span data-feather="edit" class="align-text-bottom"></span>
               About
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="?page=contact">
-              <span data-feather="users" class="align-text-bottom"></span>
-              Customer Message
+              <span data-feather="message-square" class="align-text-bottom"></span>
+              Message
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="?page=order">
+              <span data-feather="book-open" class="align-text-bottom"></span>
+              Order
             </a>
           </li>
         </ul>

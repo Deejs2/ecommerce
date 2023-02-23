@@ -85,7 +85,7 @@ html {
           echo "<div class='about-section'><h2>".$row["title"]."</h2>";
 			echo "<p>".$row["content"]."</p></div>";
             ?>
-<h2 style="text-align:center">Our Team</h2>
+<h2 style="text-align:center; padding-top: 20px;">Our Team</h2>
 <?php
 
 // retrieve the content from the database

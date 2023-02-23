@@ -2,19 +2,20 @@
 	td, th, table{
 		border: 1px solid black;
 	}
+    label,input{
+        margin-top: 8px;
+    }
 </style>
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">About Page</h1>
-</div>
+
 
 <?php
-	$sql = "SELECT title, content FROM tbl_about";
+	$sql = "SELECT content FROM tbl_about";
 	$result = $conn->query($sql);
 	$row = $result->fetch_assoc();
 ?>
-	<div style="text-align: center;">
-		<h1><?php echo $row['title'] ?></h1>
-		<p><?php echo $row['content'] ?></p>
+	<div style="text-align: center; padding: 20px 5px;">
+    <img src="../img/enepal-logo.jpg" height="70px" width="120px">
+		<p style="font-size: larger;"><?php echo $row['content'] ?></p>
 	</div>
 
 <div class="row">
@@ -49,8 +50,8 @@
                     <td><?php echo $row['post'] ?></td>
 					<td><?php echo $row['work'] ?></td>
                     <td>
-                        <a href="?page=article&action=edit&id=<?php echo $row['id'] ?>">Edit</a>
-                        <a href="?page=article&action=delete&id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure?')">Delete</a>
+                        <a href="?page=about&action=edit&id=<?php echo $row['id'] ?>"><span data-feather="edit" class="align-text-bottom"></span>Edit</a>
+                        <a href="?page=about&action=delete&id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure?')"><span data-feather="trash-2" class="align-text-bottom"></span>Delete</a>
                     </td>
                     
                 </tr>

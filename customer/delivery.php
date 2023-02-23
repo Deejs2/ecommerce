@@ -16,7 +16,7 @@ $row = $result->fetch_assoc();
 <div class='bd-example-snippet bd-code-snippet'>
         <div class='alert alert-success' role='alert'>
           <h4 class='alert-heading'>Payment successful!</h4>
-          <p>Hello <?php echo $row['name'];?>! Thank you for buying our products. We are delivering your products in <?php echo $row['address'];?> as you  mentioned in your delivery address right now!</p>
+          <p>Hello <?php echo $row['name'];?>! Thank you for buying our products. We are delivering your products in <?php echo $row['delivery_address'];?> as you  mentioned in your delivery address right now!</p>
           <hr>
           <p class='mb-0 alert alert-danger'>Please! be sure delivering address is Right. <a href="?page=delivery&action=edit&id=<?php echo $row['id'] ?>" class="alert-link">Edit</a></p>
         </div>

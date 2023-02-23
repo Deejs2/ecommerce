@@ -63,7 +63,7 @@ if(isset($message)){
 <div class="products">
 
    <div class="">
-   <h2 class="text-center">eNepal Store</h2>
+   <h2 class="text-center" style="padding: 20px;">eNepal</h2>
    <p class="text-center">eNepal provide quality goods as well as on-time delivery of the product.</p>
    </div>
 

@@ -161,15 +161,24 @@ include('../db/db.php');
                       include('product/products.php');
                   }
                   break;
-                case 'about':
-                  include("about/about.php");
-                  break;
+                  case 'about':
+                    if ($action == 'edit'){
+                        include('about/update.php');
+                    }elseif ($action == 'delete'){
+                        include('about/delete.php');
+                    }else{
+                        include('about/about.php');
+                    }
+                    break;
                   case 'contact':
                     include("contact/contact.php");
                     break;
                     case 'contact-delete':
                       include("contact/delete.php");
                       break;
+                      case 'order':
+                        include("order.php");
+                        break;
               case 'logout':
                     include("logout.php");
                     break;

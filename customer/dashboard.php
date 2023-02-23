@@ -9,7 +9,7 @@
           <p>Aww yeah, you have successfully login as our customer!</p>
             <p>We are very happy to serve you <?php echo $_SESSION['email'];?></p>
           <hr>
-          <p class="mb-0">Enjoy and have fun online shopping! ,</p><p class="alert alert-danger" role="alert"> Be sure not to miss our trending products. <a href="?page=home" class="alert-link">Click Me!</a></p>
+          <p class="mb-0">Enjoy and have fun online shopping!</p><p class="alert alert-danger" role="alert"> Be sure not to miss our trending products. <a href="?page=home" class="alert-link">Click Me!</a></p>
         </div>
         </div>
 </div>

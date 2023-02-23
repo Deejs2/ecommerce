@@ -58,7 +58,7 @@ $result = $conn->query($sql);
         <div class="container">
           <div class="carousel-caption text-start">
             <h1 style="color: black;"><?php echo $row['title'] ?></h1>
-            <p style="color: green;"><?php echo $row['content'] ?></p>
+            <p style="color: aqua;"><?php echo $row['content'] ?></p>
             <p><a class="btn btn-lg btn-primary" href="?page=register-customer">Sign up today</a></p>
           </div>
         </div>
@@ -72,7 +72,7 @@ $result = $conn->query($sql);
     
     </div>
 
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev" style="width: 90px;">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>

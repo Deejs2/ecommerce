@@ -12,8 +12,10 @@ if(isset($_POST['submit'])){
 }
 $result = mysqli_query($db, "SELECT * FROM tbl_contact");
 ?>
+<div class="container" style="padding: 20px 5px;">
+<h3 style="text-align: center;">Message from User</h3>
 
-<table border="2" class="table table-striped">
+<table class="table" style="margin-top: 20px;">
   <tr>
     <th>ID</th>   
     <th>Name</th>
@@ -38,9 +40,11 @@ $result = mysqli_query($db, "SELECT * FROM tbl_contact");
     echo $array[4]; 
     print "</td> <td>";
     echo $array[5]; 
-    print "</td> <td>";
-    echo "<a href='?page=contact-delete&id=".$array[0]."'>Delete</a>";
-    print "</td> </tr>";
+    print "</td>";
+    echo "<td><p><a href='?page=contact-delete&id=".$array[0]."'><span data-feather='trash-2' class='align-text-bottom'></span>Delete</a> <a href='https://www.gmail.com'><span data-feather='mail' class='align-text-bottom'></span>Reply</a></p></td>";
+    print " </tr>";
+ 
   }
   ?>
 </table>
+</div>

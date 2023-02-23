@@ -1,7 +1,7 @@
 
 <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 250px;">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-      <span class="fs-4">eNepal</span>
+    <a href="?page=dashboard" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <span class="fs-4"><img src="../img/enepal-logo.jpg" height="60px" width="100px"></span>
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">

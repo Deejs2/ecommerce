@@ -18,16 +18,16 @@
 
     
 <!---------third child------>
-<div class="bg-light">
-  <h3 class="text-center">eNEPAL Store</h3>
-  <p class="text-center">eNEPAL provide quality goods as well as on-time delivery of the product.</p>
-</div>
+<!-- <div style="padding: 20px 250px;">
+  <h3 class="text-center">eNepal Store</h3>
+  <p class="text-center">eNepal provide quality goods as well as on-time delivery of the product.We have a wide and assorted range of products including clothing, electronics, mobile phones, fruits, grocery and much more.</p>
+</div> -->
 
     
     <div class="position-relative overflow-hidden p-3 text-center container" style="background: url(admin/carousel/img/banner.jpg); background-size: cover; height: 650px; margin-bottom: 60px;">
 
-        <h1 class="display-4 font-weight-normal">New Product</h1>
-        <p class="lead font-weight-normal" style="padding: 8px 160px 0px; margin-bottom: 10px;">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple's marketing pages.</p>
+        <h1 class="display-4 font-weight-normal">Apple M3 MacBook Air</h1>
+        <p class="lead font-weight-normal" style="padding: 8px 160px 0px; margin-bottom: 10px;">The launch of the Apple M3 SoC is expected in the coming months after the company unveiled M2 Max and Ultra chips last week.</p>
         <a class="btn btn-outline-secondary" href="#">Coming soon</a>
  
     </div>

@@ -4,10 +4,10 @@
 $id = $_GET['id'];
 if (isset($_POST['submit'])) {
 
-    $address=$_POST['address'];
+    $delivery_address=$_POST['delivery_address'];
 
 
-    $updateQuery = "UPDATE tbl_customer SET address='$address' WHERE id = $id";
+    $updateQuery = "UPDATE tbl_customer SET delivery_address='$delivery_address' WHERE id = $id";
     $result = $conn->query($updateQuery);
 
     if ($conn->insert_id) {
@@ -15,6 +15,11 @@ if (isset($_POST['submit'])) {
     } else {
         echo $conn->error;
     }
+
+    $message[] = '<div class="alert alert-info alert-dismissible fade show" role="alert">
+    product already added to cart! <a href="?page=product&action=order" class="alert-link">update it</a>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>';
 
    // header('Location:?page=dashboard'); // Redirect to page list
    echo '<script>
@@ -46,7 +51,7 @@ $email = $_SESSION['email'];
 
             <div class="col-12">
               <label for="address" class="form-label">Delivery Address</label>
-              <input type="text" class="form-control" name="address" placeholder="" value="<?php echo $row['address'];?>" required>
+              <input type="text" class="form-control" name="delivery_address" placeholder="" value="<?php echo $row['delivery_address'];?>" required>
               <div class="invalid-feedback">
                 Please enter your shipping address.
               </div>
