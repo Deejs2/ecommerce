@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
     $delivery_address=$_POST['delivery_address'];
 
 
-    $updateQuery = "UPDATE tbl_customer SET delivery_address='$delivery_address' WHERE id = $id";
+    $updateQuery = "UPDATE tbl_checkout SET delivery_address='$delivery_address' WHERE id = $id";
     $result = $conn->query($updateQuery);
 
     if ($conn->insert_id) {
@@ -17,14 +17,14 @@ if (isset($_POST['submit'])) {
     }
 
     $message[] = '<div class="alert alert-info alert-dismissible fade show" role="alert">
-    product already added to cart! <a href="?page=product&action=order" class="alert-link">update it</a>
+    Delivery Address Update Succefully! <a href="?page=delivery" class="alert-link">Go Back</a>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>';
 
    // header('Location:?page=dashboard'); // Redirect to page list
-   echo '<script>
-window.location = "?page=delivery";
-</script>';
+//    echo '<script>
+// window.location = "?page=delivery";
+// </script>';
 }
 ?>
 
@@ -41,8 +41,15 @@ $email = $_SESSION['email'];
     <!-- Custom styles for this template -->
 
     <main>
+    <?php
+if(isset($message)){
+   foreach($message as $message){
+      echo '<div class="message" onclick="this.remove();">'.$message.'</div>';
+   }
+}
+?>
     <div class="py-5 text-center">
-      <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+      <img class="d-block mx-auto mb-4" src="../img/enepal-logo.jpg" alt="" width="72" height="57">
       <h2>Edit Delivery Address</h2>
 
         <form class="needs-validation" method="post" style="margin-left: 350px;">
@@ -51,7 +58,14 @@ $email = $_SESSION['email'];
 
             <div class="col-12">
               <label for="address" class="form-label">Delivery Address</label>
-              <input type="text" class="form-control" name="delivery_address" placeholder="" value="<?php echo $row['delivery_address'];?>" required>
+              <input type="text" class="form-control" name="delivery_address" placeholder="" value="<?php
+$email = $_SESSION['email'];
+                // retrieve the content from the database
+                      $sql = "SELECT * FROM `tbl_checkout` WHERE email = '$email'";
+                      $result = $conn->query($sql);
+
+                      $row = $result->fetch_assoc();
+                      echo $row['delivery_address'];?>" required>
               <div class="invalid-feedback">
                 Please enter your shipping address.
               </div>

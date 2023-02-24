@@ -176,9 +176,9 @@ include('../db/db.php');
                     case 'contact-delete':
                       include("contact/delete.php");
                       break;
-                      case 'order':
-                        include("order.php");
-                        break;
+                      // case 'order':
+                      //   include("order.php");
+                      //   break;
               case 'logout':
                     include("logout.php");
                     break;

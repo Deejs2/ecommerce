@@ -180,7 +180,7 @@ $email = $_SESSION['email'];
 
             <div class="col-md-3">
               <label for="cc-cvv" class="form-label">CVV</label>
-              <input type="password" name="security_code" class="form-control" id="cc-cvv" placeholder="Security code" required>
+              <input type="text" name="security_code" class="form-control" id="cc-cvv" placeholder="Security code" required>
               <div class="invalid-feedback">
                 Security code required
               </div>

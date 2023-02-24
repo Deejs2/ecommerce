@@ -7,10 +7,10 @@
 
 
 <div class="px-4 text-center border-bottom">
-    <h2 class="display-4 fw-bold">P47 Wireless Bluetooth Headphones <span class="badge bg-primary">trending</span></h2>
+    <h2 class="display-4 fw-bold">P47 Wireless Bluetooth Headphones <span class="badge bg-primary" style="font-family: cursive;">Trending</span></h2>
     <div class="overflow-hidden" style="max-height: 130vh;">
       <div class="container px-5">
-        <img src="cart/images/product-5.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+        <img src="cart/images/headset.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
       </div>
     </div>
     <div class="col-lg-6 mx-auto">

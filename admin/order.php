@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 $user_id = $_SESSION['user_id'];
 
                 // retrieve the content from the database
@@ -84,4 +84,4 @@ $user_id = $_SESSION['user_id'];
       <a href="?page=product&action=buy" class="btn <?php echo ($grand_total > 1)?'':'disabled'; ?>">proceed to checkout</a>
    </div>
 
-</div>
+</div> -->

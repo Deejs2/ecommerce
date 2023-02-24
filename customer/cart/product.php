@@ -76,13 +76,13 @@ if(isset($message)){
    ?>
       <form method="post" class="box" action="">
          <img src="../admin/product_images/<?php echo $fetch_product['product_image1']; ?>" alt="">
-         <h5 class='card-title'><?php echo $fetch_product['product_title']; ?></h5>
-         <p class='card-text'><?php echo $fetch_product['product_description']; ?></p>
+         <h3 class='card-title'><?php echo $fetch_product['product_title']; ?></h3>
+         <p class='card-text' style="text-align: left;"><?php echo $fetch_product['product_description']; ?></p>
          <div class="price">$<?php echo $fetch_product['product_price']; ?> /-</div>
          <input type="number" min="1" name="product_quantity" value="1">
          <input type="hidden" name="product_image" value="<?php echo $fetch_product['product_image1']; ?>">
          <input type="hidden" name="product_name" value="<?php echo $fetch_product['product_title']; ?>">
-         <input type="hidden" name="product_name" value="<?php echo $fetch_product['product_description']; ?>">
+         <input type="hidden" name="product_description" value="<?php echo $fetch_product['product_description']; ?>">
          <input type="hidden" name="product_price" value="<?php echo $fetch_product['product_price']; ?>">
          <input type="submit" value="add to cart" name="add_to_cart" class="btn">
       </form>
